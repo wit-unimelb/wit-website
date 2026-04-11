@@ -29,8 +29,6 @@ export default function Sponsors() {
                         to empowering women in technology.
                     </p>
                 </div>
-
-                {/* PLATINUM */}
                 <div className="sponsor-tier">
                     <div className="tier-label">
                         <div className="tier-badge tier-badge--platinum">Platinum</div>
@@ -46,7 +44,6 @@ export default function Sponsors() {
                     </div>
                 </div>
 
-                {/* GOLD */}
                 <div className="sponsor-tier">
                     <div className="tier-label">
                         <div className="tier-badge tier-badge--gold">Gold</div>
@@ -61,8 +58,6 @@ export default function Sponsors() {
                         ))}
                     </div>
                 </div>
-
-                {/* SILVER */}
                 <div className="sponsor-tier">
                     <div className="tier-label">
                         <div className="tier-badge tier-badge--silver">Silver</div>
@@ -77,10 +72,8 @@ export default function Sponsors() {
                         ))}
                     </div>
                 </div>
-
-                {/* BECOME A SPONSOR CTA */}
                 <div className="sponsors-cta">
-                    <h3>Interested in sponsoring WiT?</h3>
+                    <h3>Interested in sponsoring WIT?</h3>
                     <p>
                         Partner with us to connect with Melbourne's brightest women in tech.
                         Download our prospectus or get in touch directly.
