@@ -117,7 +117,6 @@ export default function Events() {
                     <div className="events-toggle" aria-label="Event view switcher">
                         {(['upcoming', 'past'] as EventSectionTone[]).map((view) => {
                             const isActive = activeView === view
-                            const eventCount = eventsByView[view].length
 
                             return (
                                 <button
@@ -130,7 +129,6 @@ export default function Events() {
                                     <span className="events-toggle-button-label">
                                         {view === 'upcoming' ? 'Upcoming Events' : 'Past Events'}
                                     </span>
-                                    <span className="events-toggle-button-count">{eventCount}</span>
                                 </button>
                             )
                         })}
