@@ -1,19 +1,52 @@
-const SPONSORS = {
+type Sponsor = {
+    name: string
+    logo?: string | null
+}
+
+type SponsorTier = 'platinum' | 'gold' | 'silver'
+
+const SPONSORS: Record<SponsorTier, Sponsor[]> = {
     platinum: [
-        { name: 'Company1', logo: null },
-        { name: 'Company2', logo: null },
+        { name: 'Airwallex', logo: null },
     ],
     gold: [
-        { name: 'Company3', logo: null },
-        { name: 'Company4', logo: null },
-        { name: 'Company5', logo: null },
+        { name: 'Macquarie', logo: null },
+        { name: 'Jane Street', logo: null },
+        { name: 'Atlassian', logo: null },
+        { name: 'AustralianSuper', logo: null },
     ],
     silver: [
-        { name: 'Company6', logo: null },
-        { name: 'Company7', logo: null },
-        { name: 'Company8', logo: null },
-        { name: 'Company9', logo: null },
+        { name: 'Vanguard', logo: null },
     ]
+}
+
+const SPONSOR_TIER_LABELS: Record<SponsorTier, string> = {
+    platinum: 'Platinum',
+    gold: 'Gold',
+    silver: 'Silver',
+}
+
+const sponsorLogoFiles = import.meta.glob('../assets/sponsors/*.{png,jpg,jpeg,svg,webp,avif}', {
+    eager: true,
+    import: 'default',
+}) as Record<string, string>
+
+function normalizeSponsorKey(value: string) {
+    return value.toLowerCase().replace(/[^a-z0-9]/g, '')
+}
+
+const sponsorLogosByKey = Object.fromEntries(
+    Object.entries(sponsorLogoFiles).map(([path, src]) => {
+        const filename = path.split('/').pop() ?? ''
+        const basename = filename.replace(/\.[^.]+$/, '')
+
+        return [normalizeSponsorKey(basename), src]
+    })
+) as Record<string, string>
+
+function getSponsorLogo(sponsor: Sponsor) {
+    const logoKey = normalizeSponsorKey(sponsor.logo ?? sponsor.name)
+    return sponsorLogosByKey[logoKey]
 }
 
 export default function Sponsors() {
@@ -29,49 +62,37 @@ export default function Sponsors() {
                         to empowering women in technology.
                     </p>
                 </div>
-                <div className="sponsor-tier">
-                    <div className="tier-label">
-                        <div className="tier-badge tier-badge--platinum">Platinum</div>
-                    </div>
-                    <div className="tier-grid tier-grid--platinum">
-                        {SPONSORS.platinum.map((s, i) => (
-                            <div className="sponsor-card sponsor-card--platinum" key={i}>
-                                <div className="sponsor-card-inner">
-                                    <div className="sponsor-logo-placeholder">{s.name}</div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                {(Object.keys(SPONSORS) as SponsorTier[]).map((tier) => (
+                    <div className="sponsor-tier" key={tier}>
+                        <div className="tier-label">
+                            <div className={`tier-badge tier-badge--${tier}`}>{SPONSOR_TIER_LABELS[tier]}</div>
+                        </div>
+                        <div className={`tier-grid tier-grid--${tier}`}>
+                            {SPONSORS[tier].map((sponsor) => {
+                                const logoSrc = getSponsorLogo(sponsor)
 
-                <div className="sponsor-tier">
-                    <div className="tier-label">
-                        <div className="tier-badge tier-badge--gold">Gold</div>
+                                return (
+                                    <div className={`sponsor-card sponsor-card--${tier}`} key={sponsor.name}>
+                                        <div className="sponsor-card-inner">
+                                            {logoSrc ? (
+                                                <img
+                                                    className="sponsor-logo"
+                                                    src={logoSrc}
+                                                    alt={`${sponsor.name} logo`}
+                                                    loading="lazy"
+                                                />
+                                            ) : (
+                                                <div className="sponsor-logo-placeholder">
+                                                    <span>{sponsor.name}</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
+                                )
+                            })}
+                        </div>
                     </div>
-                    <div className="tier-grid tier-grid--gold">
-                        {SPONSORS.gold.map((s, i) => (
-                            <div className="sponsor-card sponsor-card--gold" key={i}>
-                                <div className="sponsor-card-inner">
-                                    <div className="sponsor-logo-placeholder">{s.name}</div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-                <div className="sponsor-tier">
-                    <div className="tier-label">
-                        <div className="tier-badge tier-badge--silver">Silver</div>
-                    </div>
-                    <div className="tier-grid tier-grid--silver">
-                        {SPONSORS.silver.map((s, i) => (
-                            <div className="sponsor-card sponsor-card--silver" key={i}>
-                                <div className="sponsor-card-inner">
-                                    <div className="sponsor-logo-placeholder">{s.name}</div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                ))}
                 <div className="sponsors-cta">
                     <h3>Interested in sponsoring WIT?</h3>
                     <p>

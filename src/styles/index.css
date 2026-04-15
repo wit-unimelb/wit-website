@@ -881,6 +881,12 @@ footer p {
     box-shadow: 0 8px 28px rgba(212, 69, 122, 0.1);
 }
 
+.sponsor-card-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .sponsor-card--platinum .sponsor-card-inner {
     padding: 48px 40px;
 }
@@ -906,15 +912,57 @@ footer p {
     border-top: 3px solid #94a3b8;
 }
 
+.sponsor-logo {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.sponsor-card--platinum .sponsor-logo {
+    max-height: 92px;
+}
+
+.sponsor-card--gold .sponsor-logo {
+    max-height: 72px;
+}
+
+.sponsor-card--silver .sponsor-logo {
+    max-height: 58px;
+}
+
 .sponsor-logo-placeholder {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-muted);
+    width: 100%;
+    border-radius: 14px;
+    padding: 18px 16px;
+    background:
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.34), transparent 26%),
+        linear-gradient(135deg, rgba(212, 69, 122, 0.5), rgba(46, 31, 82, 0.7));
+    color: rgba(255, 255, 255, 0.92);
     font-size: 0.8rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    min-height: 60px;
+    text-align: center;
+}
+
+.sponsor-card--platinum .sponsor-logo-placeholder {
+    min-height: 108px;
+}
+
+.sponsor-card--gold .sponsor-logo-placeholder {
+    min-height: 88px;
+}
+
+.sponsor-card--silver .sponsor-logo-placeholder {
+    min-height: 72px;
+}
+
+.sponsor-logo-placeholder span {
+    max-width: 180px;
 }
 
 /* Bottom CTA */
