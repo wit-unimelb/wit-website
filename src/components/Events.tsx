@@ -1,4 +1,8 @@
 import { useState } from 'react'
+import networkingSocialImg from '@/assets/events/networkingSocial.webp'
+import ww1Img from '@/assets/events/w&w1.webp'
+import ww2Img from '@/assets/events/w&w2.webp'
+import ww3Img from '@/assets/events/w&w3.webp'
 
 type ClubEvent = {
     name: string
@@ -39,7 +43,7 @@ const EVENTS: ClubEvent[] = [
         name: 'Networking Social',
         date: '2026-04-28',
         caption: 'Join us for an evening of connections, conversations, and career opportunities with students, alumni, and sponsors.',
-        image: 'src/assets/events/networkingSocial.webp',
+        image: networkingSocialImg,
         humanitixUrl: 'https://events.humanitix.com/networking-social-gjxcusfs?_gl=1*r9rjya*_gcl_aw*R0NMLjE3NzYxNTU3OTEuQ2owS0NRand5X2ZPQmhDNkFSSXNBSEtGQjc4Rk42ZDIwNFIwWnN5c1UwZ3NvWXBKV1Y3N01wdDEtTGdLR2xhRjItWlphQk9vUkNGRkZSY2FBc3dZRUFMd193Y0I.*_gcl_au*MTkwMzY4ODAyOC4xNzc2MTU1Nzkx*_ga*MTA5OTU3MzUwMi4xNzc2MTU1Nzkx*_ga_LHKW5FR9N6*czE3NzYyMjk1MTkkbzUkZzEkdDE3NzYyMjk1MjUkajU0JGwwJGgw',
         location: 'Melbourne Connect, Carlton',
         format: 'Networking Social',
@@ -60,7 +64,7 @@ const EVENTS: ClubEvent[] = [
         name: 'WIT & Wisdom: HTML + CSS',
         date: '2026-03-31',
         caption: 'Want to build your own portfolio website but have no idea where to start? We got you. Join us for a beginner-friendly intro to HTML + CSS where you’ll learn the basics of portfolio website making in a fun and supportive space.',
-        image: '',
+        image: ww3Img,
         humanitixUrl: '',
         location: 'Old Engineering Building',
         format: 'Skills Workshop',
@@ -70,7 +74,7 @@ const EVENTS: ClubEvent[] = [
         name: 'WIT & Wisdom: Git 101',
         date: '2026-03-17',
         caption: 'Because the first one was so good... we had to run it again. If you missed it the first time or want a refresher, join us for another WiT & Wisdom session where we will break down the basics of Git in a beginner friendly space. Come learn something new, ask questions, and connect with other women in tech.',
-        image: '',
+        image: ww2Img,
         humanitixUrl: '',
         location: 'Glyn Davis Building',
         format: 'Technical Workshop',
@@ -80,7 +84,7 @@ const EVENTS: ClubEvent[] = [
         name: 'Wit & Wisdom: How to Survive Uni ft. Speed Friending',
         date: '2026-03-05',
         caption: 'We’re talking study tips, balancing life, and all the things no one really explains in first year. AND you’ll get to meet new people through speed friending because we are not doing uni alone this year.',
-        image: '',
+        image: ww1Img,
         humanitixUrl: '',
         location: 'Student Precinct',
         format: 'Community Social',
