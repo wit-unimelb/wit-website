@@ -239,9 +239,6 @@ export default function Events() {
                                                 <span>{event.name}</span>
                                             </div>
                                         )}
-                                        <span className={`event-status-badge event-status-badge--${activeView}`}>
-                                            {activeView === 'upcoming' ? 'Upcoming' : 'Past Event'}
-                                        </span>
                                     </div>
 
                                     <div className="club-event-body">

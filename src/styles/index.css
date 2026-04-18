@@ -1409,28 +1409,6 @@ footer p {
     transform: scale(1.06);
 }
 
-.event-status-badge {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    z-index: 1;
-    padding: 7px 12px;
-    border-radius: 999px;
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    background: rgba(255, 255, 255, 0.92);
-}
-
-.event-status-badge--upcoming {
-    color: var(--pink-deep);
-}
-
-.event-status-badge--past {
-    color: var(--plum);
-}
-
 .club-event-body {
     display: flex;
     flex: 1;
@@ -1585,11 +1563,6 @@ footer p {
 
     .club-event-title {
         font-size: 1.45rem;
-    }
-
-    .event-status-badge {
-        top: 12px;
-        left: 12px;
     }
 }
 
