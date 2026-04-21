@@ -1,7 +1,9 @@
 // Replace with real sponsor names when you connect Sanity
 const sponsors = [
-    'Atlassian', 'PwC', 'Deloitte', 'ANZ Bank',
-    'REA Group', 'Canva', 'KPMG', 'Accenture',
+    'Airwallex', 'Macquarie', 'Jane Street', 'Fenwick',
+    'Atlassian', 'Australian Super', 'Susquehanna', 'CBA',
+    'Vanguard', 'Optiver', 'Accenture', 'PWC',
+    'Seek', 'EY',
 ]
 
 export default function Marquee() {
