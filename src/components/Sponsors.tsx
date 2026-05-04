@@ -1,29 +1,42 @@
 type Sponsor = {
     name: string
     logo?: string | null
+    logoMaxHeight?: number
+    url?: string
 }
 
-type SponsorTier = 'platinum' | 'gold' | 'silver'
+type SponsorTier = 'platinum' | 'gold' | 'silver' | 'tailored'
 
 const SPONSORS: Record<SponsorTier, Sponsor[]> = {
     platinum: [
-        { name: 'Airwallex', logo: null },
+        { name: 'Airwallex', logo: null, url: 'https://www.airwallex.com/au' },
     ],
     gold: [
-        { name: 'Macquarie', logo: null },
-        { name: 'Jane Street', logo: null },
-        { name: 'Atlassian', logo: null },
-        { name: 'AustralianSuper', logo: null },
+        { name: 'Macquarie', logo: null, url: 'https://www.macquarie.com.au/' },
+        { name: 'Jane Street', logo: null, url: 'https://www.janestreet.com/' },
+        { name: 'Fenwick', logo: null, url: 'https://www.fenwick.com.au/' },
+        { name: 'Atlassian', logo: null, url: 'https://www.atlassian.com/' },
+        { name: 'AustralianSuper', logo: null, url: 'https://www.australiansuper.com/' },
     ],
     silver: [
-        { name: 'Vanguard', logo: null },
-    ]
+        { name: 'Susquehanna', logo: null, logoMaxHeight: 80, url: 'https://sig.com/' },
+        { name: 'Commonwealth Bank of Australia (CBA)', logo: 'cba', url: 'https://www.commbank.com.au/' },
+        { name: 'Vanguard', logo: null, url: 'https://www.vanguard.com.au/corporate/' },
+    ],
+    tailored: [
+        { name: 'Optiver', logo: null, url: 'https://optiver.com/' },
+        { name: 'Accenture', logo: null, url: 'https://www.accenture.com/au-en' },
+        { name: 'PWC', logo: null, logoMaxHeight: 70, url: 'https://www.pwc.com.au/' },
+        { name: 'SEEK', logo: null, url: 'https://www.seek.com.au/' },
+        { name: 'Ernst & Young (EY)', logo: 'ey', url: 'https://www.ey.com/en_au' },
+    ],
 }
 
 const SPONSOR_TIER_LABELS: Record<SponsorTier, string> = {
     platinum: 'Platinum',
     gold: 'Gold',
     silver: 'Silver',
+    tailored: 'Tailored',
 }
 
 const sponsorLogoFiles = import.meta.glob('../assets/sponsors/*.{png,jpg,jpeg,svg,webp,avif}', {
@@ -72,7 +85,13 @@ export default function Sponsors() {
                                 const logoSrc = getSponsorLogo(sponsor)
 
                                 return (
-                                    <div className={`sponsor-card sponsor-card--${tier}`} key={sponsor.name}>
+                                    <a
+                                        className={`sponsor-card sponsor-card--${tier}`}
+                                        key={sponsor.name}
+                                        href={sponsor.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         <div className="sponsor-card-inner">
                                             {logoSrc ? (
                                                 <img
@@ -80,6 +99,7 @@ export default function Sponsors() {
                                                     src={logoSrc}
                                                     alt={`${sponsor.name} logo`}
                                                     loading="lazy"
+                                                    style={sponsor.logoMaxHeight ? { maxHeight: sponsor.logoMaxHeight } : undefined}
                                                 />
                                             ) : (
                                                 <div className="sponsor-logo-placeholder">
@@ -87,7 +107,7 @@ export default function Sponsors() {
                                                 </div>
                                             )}
                                         </div>
-                                    </div>
+                                    </a>
                                 )
                             })}
                         </div>

@@ -849,6 +849,11 @@ footer p {
     color: #475569;
 }
 
+.tier-badge--tailored {
+    background: linear-gradient(135deg, #ccfbf1, #99f6e4);
+    color: #0f5340;
+}
+
 /* Grids — platinum biggest, silver smallest */
 .tier-grid {
     display: grid;
@@ -867,8 +872,14 @@ footer p {
     grid-template-columns: repeat(4, 1fr);
 }
 
+.tier-grid--tailored {
+    grid-template-columns: repeat(5, 1fr);
+}
+
 /* Cards */
 .sponsor-card {
+    display: block;
+    text-decoration: none;
     border-radius: 16px;
     border: 1px solid rgba(240, 168, 192, 0.2);
     background: #fff;
@@ -899,6 +910,10 @@ footer p {
     padding: 28px 20px;
 }
 
+.sponsor-card--tailored .sponsor-card-inner {
+    padding: 24px 20px;
+}
+
 /* Top accent line per tier */
 .sponsor-card--platinum {
     border-top: 3px solid #c4b0e8;
@@ -910,6 +925,10 @@ footer p {
 
 .sponsor-card--silver {
     border-top: 3px solid #94a3b8;
+}
+
+.sponsor-card--tailored {
+    border-top: 3px solid #2dd4bf;
 }
 
 .sponsor-logo {
@@ -930,6 +949,10 @@ footer p {
 
 .sponsor-card--silver .sponsor-logo {
     max-height: 58px;
+}
+
+.sponsor-card--tailored .sponsor-logo {
+    max-height: 48px;
 }
 
 .sponsor-logo-placeholder {
@@ -1017,13 +1040,18 @@ footer p {
     .tier-grid--silver {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .tier-grid--tailored {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 480px) {
 
     .tier-grid--gold,
-    .tier-grid--silver {
-        grid-template-columns: 1fr;
+    .tier-grid--silver,
+    .tier-grid--tailored {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
