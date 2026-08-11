@@ -2,7 +2,7 @@ name: Fetch Humanitix Data
 
 on:
   schedule:
-    - cron: "0 0 * * *"    # runs every day at midnight melbourne time
+    - cron: "0 * * * *"    # runs on the hour
       timezone: "Australia/Melbourne"
   workflow_dispatch:       # allows manual runs
 
