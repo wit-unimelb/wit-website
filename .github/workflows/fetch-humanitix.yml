@@ -1,0 +1,35 @@
+name: Fetch Humanitix Data
+
+on:
+  schedule:
+    - cron: "0 0 * * "     # runs every day at midnight melbourne time
+      timezone: "Australia/Melbourne"
+  workflow_dispatch:       # allows manual runs
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Fetch Humanitix API data
+        uses: JamesIves/fetch-api-data-action@v2
+        with:
+          endpoint: https://api.humanitix.com/v1/events
+          configuration: |
+            {
+              "method": "GET",
+              "headers": {
+                "x-api-key": "${{ secrets.HUMANITIX_API_KEY }}",
+                "inFutureOnly": true
+              }
+            }
+          save-name: humanitix.json
+
+      - name: Deploy data to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: fetch-api-data-action
+          target-folder: data
