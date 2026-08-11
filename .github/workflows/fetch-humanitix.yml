@@ -25,7 +25,7 @@ jobs:
               "method": "GET",
               "headers": {
                 "x-api-key": "${{ secrets.HUMANITIX_API_KEY }}"
-              },
+              }
             }
           save-name: humanitix.json
 
