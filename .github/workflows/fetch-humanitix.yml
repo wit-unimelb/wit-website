@@ -1,6 +1,9 @@
 name: Fetch Humanitix Data
 
 on:
+  push:
+    branches:
+      - feat/humanitix-connection
   schedule:
     - cron: "0 * * * *"    # runs on the hour
       timezone: "Australia/Melbourne"
