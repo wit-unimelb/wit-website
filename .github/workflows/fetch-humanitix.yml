@@ -31,6 +31,7 @@ jobs:
               }
             }
           save-name: humanitix
+          set-output: false
 
       - name: Deploy data to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
@@ -38,3 +39,4 @@ jobs:
           branch: feat/humanitix-connection
           folder: data
           target-folder: data
+
