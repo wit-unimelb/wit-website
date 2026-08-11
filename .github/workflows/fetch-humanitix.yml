@@ -9,6 +9,10 @@ on:
       timezone: "Australia/Melbourne"
   workflow_dispatch:       # allows manual runs
 
+permissions:
+  contents: write
+  pages: write
+
 jobs:
   fetch:
     runs-on: ubuntu-latest
