@@ -19,15 +19,13 @@ jobs:
       - name: Fetch Humanitix API data
         uses: JamesIves/fetch-api-data-action@v2
         with:
-          endpoint: https://api.humanitix.com/v1/events
+          endpoint: https://api.humanitix.com/v1/events?page=1&inFutureOnly=true
           configuration: |
             {
               "method": "GET",
               "headers": {
-                "x-api-key": "${{ secrets.HUMANITIX_API_KEY }}",
-                "inFutureOnly": true,
-                "page": 1
-              }
+                "x-api-key": "${{ secrets.HUMANITIX_API_KEY }}"
+              },
             }
           save-name: humanitix.json
 
