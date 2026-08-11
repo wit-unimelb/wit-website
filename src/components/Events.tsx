@@ -1,8 +1,31 @@
 import { useState } from 'react'
-import networkingSocialImg from '@/assets/events/networkingSocial.webp'
-import ww1Img from '@/assets/events/w&w1.webp'
-import ww2Img from '@/assets/events/w&w2.webp'
-import ww3Img from '@/assets/events/w&w3.webp'
+import humanitixData from '../../data/humanitix.json'
+
+const HUMANITIX_CATEGORY_MAP: Record<string, 'Workshops' | 'Networking' | 'Social Events' | 'Competitions' | 'Other'> = {
+  classTrainingOrWorkshop: 'Workshops',
+  seminarOrTalk: 'Workshops',
+
+  meetingOrNetworkingEvent: 'Networking',
+  conference: 'Networking',
+  convention: 'Networking',
+  tradeShowConsumerShowOrExpo: 'Networking',
+
+  partyOrSocialGathering: 'Social Events',
+  festivalOrFair: 'Social Events',
+  dinnerOrGala: 'Social Events',
+  concertOrPerformance: 'Social Events',
+  screening: 'Social Events',
+  tour: 'Social Events',
+  campTripOrRetreat: 'Social Events',
+  attraction: 'Social Events',
+  rally: 'Social Events',
+  
+  other: 'Other',
+
+  gameOrCompetition: 'Competitions',
+  tournament: 'Competitions',
+  raceOrEnduranceEvent: 'Competitions',
+}
 
 type ClubEvent = {
     name: string
@@ -12,9 +35,18 @@ type ClubEvent = {
     humanitixUrl: string
     location: string
     format: string
-    heroHighlight: string
-    isFeaturedHero?: boolean
 }
+
+
+const humanitixEvents: ClubEvent[] = humanitixData.events.map(event => ({
+    name: event.name,
+    date: event.startDate,
+    caption: event.sharingDescription,
+    image: event.bannerImage.url,
+    humanitixUrl: event.url,
+    location: event.eventLocation.address,
+    format: HUMANITIX_CATEGORY_MAP[event.classification.type] || 'Other',
+}));
 
 type EventSectionTone = 'upcoming' | 'past'
 
@@ -35,61 +67,10 @@ const EVENT_TYPES = [
         name: 'Competitions',
         description: 'Challenge-based events that bring problem solving, teamwork, and a little bit of healthy pressure into the mix.',
     },
-]
-
-// Store event photos in `src/assets/events/` and import them here when ready.
-const EVENTS: ClubEvent[] = [
     {
-        name: 'Networking Social',
-        date: '2026-04-28',
-        caption: 'Join us for an evening of connections, conversations, and career opportunities with students, alumni, and sponsors.',
-        image: networkingSocialImg,
-        humanitixUrl: 'https://events.humanitix.com/networking-social-gjxcusfs?_gl=1*r9rjya*_gcl_aw*R0NMLjE3NzYxNTU3OTEuQ2owS0NRand5X2ZPQmhDNkFSSXNBSEtGQjc4Rk42ZDIwNFIwWnN5c1UwZ3NvWXBKV1Y3N01wdDEtTGdLR2xhRjItWlphQk9vUkNGRkZSY2FBc3dZRUFMd193Y0I.*_gcl_au*MTkwMzY4ODAyOC4xNzc2MTU1Nzkx*_ga*MTA5OTU3MzUwMi4xNzc2MTU1Nzkx*_ga_LHKW5FR9N6*czE3NzYyMjk1MTkkbzUkZzEkdDE3NzYyMjk1MjUkajU0JGwwJGgw',
-        location: 'Melbourne Connect, Carlton',
-        format: 'Networking Social',
-        heroHighlight: 'A relaxed flagship night to meet students, alumni, and sponsors in one room before semester gets busy.',
-        isFeaturedHero: true,
+        name: 'Other',
+        description: 'Events that don’t fit neatly into the above categories, but are still worth attending.',
     },
-    {
-        name: 'Susquehanna Brainteaser Battle',
-        date: '2026-05-12',
-        caption: 'Take on a fast-paced puzzle night with team challenges, prizes, and a chance to meet recruiters in a low-pressure setting.',
-        image: '',
-        humanitixUrl: '',
-        location: 'Arts West Forum',
-        format: 'Challenge Night',
-        heroHighlight: 'Expect team-based problem solving, prizes, and a playful route into meeting recruiters.',
-    },
-    {
-        name: 'WIT & Wisdom: HTML + CSS',
-        date: '2026-03-31',
-        caption: 'Want to build your own portfolio website but have no idea where to start? We got you. Join us for a beginner-friendly intro to HTML + CSS where you’ll learn the basics of portfolio website making in a fun and supportive space.',
-        image: ww3Img,
-        humanitixUrl: '',
-        location: 'Old Engineering Building',
-        format: 'Skills Workshop',
-        heroHighlight: 'A beginner-friendly technical session focused on building confidence through practical website basics.',
-    },
-    {
-        name: 'WIT & Wisdom: Git 101',
-        date: '2026-03-17',
-        caption: 'Because the first one was so good... we had to run it again. If you missed it the first time or want a refresher, join us for another WiT & Wisdom session where we will break down the basics of Git in a beginner friendly space. Come learn something new, ask questions, and connect with other women in tech.',
-        image: ww2Img,
-        humanitixUrl: '',
-        location: 'Glyn Davis Building',
-        format: 'Technical Workshop',
-        heroHighlight: 'A practical refresher designed to make version control feel approachable rather than intimidating.',
-    },
-    {
-        name: 'Wit & Wisdom: How to Survive Uni ft. Speed Friending',
-        date: '2026-03-05',
-        caption: 'We’re talking study tips, balancing life, and all the things no one really explains in first year. AND you’ll get to meet new people through speed friending because we are not doing uni alone this year.',
-        image: ww1Img,
-        humanitixUrl: '',
-        location: 'Student Precinct',
-        format: 'Community Social',
-        heroHighlight: 'Part orientation, part social, and designed to help members settle into uni with actual connection.',
-    }
 ]
 
 const EVENT_VIEW_COPY: Record<EventSectionTone, {
@@ -116,11 +97,11 @@ const eventDateFormatter = new Intl.DateTimeFormat('en-AU', {
 })
 
 function getEventTime(date: string) {
-    return new Date(`${date}T00:00:00`).getTime()
+    return new Date(date).getTime()
 }
 
 function formatEventDate(date: string) {
-    return eventDateFormatter.format(new Date(`${date}T00:00:00`))
+    return eventDateFormatter.format(new Date(date))
 }
 
 export default function Events() {
@@ -129,11 +110,11 @@ export default function Events() {
     today.setHours(0, 0, 0, 0)
     const todayTime = today.getTime()
 
-    const upcomingEvents = EVENTS
+    const upcomingEvents = humanitixEvents
         .filter((event) => getEventTime(event.date) >= todayTime)
         .sort((firstEvent, secondEvent) => getEventTime(firstEvent.date) - getEventTime(secondEvent.date))
 
-    const pastEvents = EVENTS
+    const pastEvents = humanitixEvents
         .filter((event) => getEventTime(event.date) < todayTime)
         .sort((firstEvent, secondEvent) => getEventTime(secondEvent.date) - getEventTime(firstEvent.date))
 
@@ -144,7 +125,7 @@ export default function Events() {
 
     const visibleEvents = eventsByView[activeView]
     const activeViewCopy = EVENT_VIEW_COPY[activeView]
-    const heroEvent = upcomingEvents.find((event) => event.isFeaturedHero) ?? upcomingEvents[0] ?? EVENTS[0]
+    const heroEvent = upcomingEvents[0] ?? humanitixEvents[0]
 
     return (
         <section className="events-page">
