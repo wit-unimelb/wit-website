@@ -269,8 +269,8 @@ export default function Hero() {
                             <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/discord.svg" alt="Discord" />
                         </a>
                         {/*Insert actual UMSU Logo Here*/}
-                        <a href="https://umsu.unimelb.edu.au/buddy-up/clubs/clubs-listing/join/website/" target="_blank" rel="noopener noreferrer" className="social-btn">
-                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg" alt="UMSU" />
+                        <a href="https://www.linkedin.com/company/women-in-tech-wit-unimelb/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="social-btn">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" alt="Linkedin" />
                         </a>
                         <a href="https://www.instagram.com/witunimelb/" target="_blank" rel="noopener noreferrer" className="social-btn">
                             <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg" alt="Instagram" />
