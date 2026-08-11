@@ -11,7 +11,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
 
 jobs:
   fetch:
@@ -31,7 +30,7 @@ jobs:
                 "x-api-key": "${{ secrets.HUMANITIX_API_KEY }}"
               }
             }
-          save-name: humanitix.json
+          save-name: humanitix
 
       - name: Deploy data to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
