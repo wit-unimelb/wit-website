@@ -22,7 +22,7 @@ jobs:
       - name: Fetch Humanitix API data
         uses: JamesIves/fetch-api-data-action@v2
         with:
-          endpoint: https://api.humanitix.com/v1/events?page=1&inFutureOnly=true
+          endpoint: https://api.humanitix.com/v1/events?page=1
           configuration: |
             {
               "method": "GET",

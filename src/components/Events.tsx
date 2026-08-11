@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import humanitixData from '../../data/humanitix.json'
 
+/* map humantix event types to internal event categories */
 const HUMANITIX_CATEGORY_MAP: Record<string, 'Workshops' | 'Networking' | 'Social Events' | 'Competitions' | 'Other'> = {
   classTrainingOrWorkshop: 'Workshops',
   seminarOrTalk: 'Workshops',
@@ -37,7 +38,7 @@ type ClubEvent = {
     format: string
 }
 
-
+/* parse humanitx events */
 const humanitixEvents: ClubEvent[] = humanitixData.events.map(event => ({
     name: event.name,
     date: event.startDate,
