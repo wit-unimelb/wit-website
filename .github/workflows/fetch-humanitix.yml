@@ -36,5 +36,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: feat/humanitix-connection
-          folder: fetch-api-data-action
+          folder: data
           target-folder: data
