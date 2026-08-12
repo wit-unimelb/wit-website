@@ -268,7 +268,6 @@ export default function Hero() {
                         <a href="https://discord.gg/mW5dg4dwcD" target="_blank" rel="noopener noreferrer" className="social-btn">
                             <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/discord.svg" alt="Discord" />
                         </a>
-                        {/*Insert actual UMSU Logo Here*/}
                         <a href="https://www.linkedin.com/company/women-in-tech-wit-unimelb/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="social-btn">
                             <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" alt="Linkedin" />
                         </a>
