@@ -10,7 +10,7 @@ export default function Navbar() {
         <nav>
             <a className="nav-logo" href="/"><span>WIT</span> @ UniMelb</a>
             <ul className={isOpen ? 'nav-links open' : 'nav-links'}>
-                {/* <li><Link to="/about">About Us</Link></li> */}
+                <li><Link to="/experience">Experience WiT</Link></li>
                 <li><Link to="/events">Events</Link></li>
                 <li><Link to="/sponsors">Sponsors</Link></li>
                 {/* <li><Link to="/contact">Contact</Link></li> */}
