@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import humanitixData from '../../data/humanitix.json'
+import witLogo from '../assets/events/WitLogo.png'
 
 /* map humantix event types to internal event categories */
 const HUMANITIX_CATEGORY_MAP: Record<string, 'Workshops' | 'Networking' | 'Social Events' | 'Competitions' | 'Other'> = {
@@ -39,15 +40,17 @@ type ClubEvent = {
 }
 
 /* parse humanitx events */
-const humanitixEvents: ClubEvent[] = humanitixData.events.map(event => ({
-    name: event.name,
-    date: event.startDate,
-    caption: event.sharingDescription,
-    image: event.bannerImage.url,
-    humanitixUrl: event.url,
-    location: event.eventLocation.address,
-    format: HUMANITIX_CATEGORY_MAP[event.classification.type] || 'Other',
-}));
+const humanitixEvents: ClubEvent[] = humanitixData.events
+    .filter((event) => event.public !== false && event.published !== false && event.isArchived !== true)
+    .map(event => ({
+        name: event.name || 'Untitled Event',
+        date: event.startDate || '',
+        caption: event.sharingDescription || '',
+        image: event.bannerImage?.url || witLogo,
+        humanitixUrl: event.url || 'https://events.humanitix.com/host/women-in-technology',
+        location: event.eventLocation.address || '',
+        format: HUMANITIX_CATEGORY_MAP[event.classification.type] || 'Other',
+    }));
 
 type EventSectionTone = 'upcoming' | 'past'
 
