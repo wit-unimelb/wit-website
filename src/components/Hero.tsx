@@ -244,6 +244,11 @@ export default function Hero() {
     return (
         <section className="hero">
             <canvas ref={canvasRef} className="hero-canvas" />
+            <img
+                src="/horse.png"
+                alt=""
+                className="hero-horse"
+            />
             <div className="hero-vignette" />
 
             <div className="hero-content">

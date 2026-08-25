@@ -1983,3 +1983,26 @@ footer p {
         transform: translateY(0);
     }
 }
+
+.hero-horse {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+
+    width: 150px;
+    height: auto;
+
+    z-index: 5;
+
+    animation: horse-walk 12s linear infinite;
+}
+
+@keyframes horse-walk {
+    from {
+        transform: translateX(-200px);
+    }
+
+    to {
+        transform: translateX(100vw);
+    }
+}
