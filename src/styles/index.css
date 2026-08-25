@@ -123,6 +123,33 @@ nav {
     transition: all 0.25s;
 }
 
+/* Experience page navigation */
+nav.nav--experience {
+    background: rgba(36, 15, 51, 0.72);
+    border-bottom-color: rgba(255, 250, 253, 0.18);
+}
+
+.nav--experience .nav-logo {
+    color: #fffafd;
+}
+
+.nav--experience .nav-logo span {
+    color: #ffe0f1;
+}
+
+.nav--experience .nav-links a {
+    color: rgba(255, 250, 253, 0.78);
+}
+
+.nav--experience .nav-links a:hover {
+    background: rgba(255, 250, 253, 0.14);
+    color: #fffafd;
+}
+
+.nav--experience .nav-hamburger span {
+    background: #fffafd;
+}
+
 /*Hero Section!*/
 .hero {
     position: relative;
@@ -715,6 +742,11 @@ footer p {
         border-bottom: 1px solid rgba(240, 168, 192, 0.2);
         /* CHANGED: pink border */
         gap: 4px;
+    }
+
+    .nav--experience .nav-links.open {
+        background: rgba(36, 15, 51, 0.96);
+        border-bottom-color: rgba(255, 250, 253, 0.18);
     }
 
     .nav-links.open a {
@@ -2035,52 +2067,36 @@ footer p {
 
 /* ================================================================
    EXPERIENCE PAGE
-   Desktop reference canvas: 1280 × 4502. The background stack below is
-   deliberately isolated so the supplied Figma gradient can replace the
-   fallback without changing any of the layout or responsive rules.
+   Desktop reference canvas: 1280 × 4502. The page background follows the
+   supplied Figma reference: top #240F33, middle #9D73B9, bottom #314E74.
    ================================================================ */
+html.experience-page-active,
+body.experience-page-active {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html.experience-page-active::-webkit-scrollbar,
+body.experience-page-active::-webkit-scrollbar {
+    display: none;
+}
+
 .experience-page {
-    --experience-ink: #312340;
-    --experience-berry: #b94778;
-    --experience-rose: #eec4d3;
+    --experience-ink: #fffafd;
+    --experience-berry: #ffe0f1;
+    --experience-rose: #dfc4f1;
     --experience-paper: #fffafd;
-    --experience-line: rgba(74, 36, 73, 0.18);
+    --experience-line: rgba(255, 250, 253, 0.29);
     position: relative;
     isolation: isolate;
     overflow: hidden;
     color: var(--experience-ink);
-    background:
-        radial-gradient(circle at 88% 8%, rgba(245, 207, 222, 0.86), transparent 23%),
-        radial-gradient(circle at 7% 48%, rgba(230, 210, 244, 0.56), transparent 22%),
-        linear-gradient(180deg, #fffafd 0%, #fdf8fb 41%, #fffafd 100%);
+    background: linear-gradient(to bottom, #240F33 0%, #9D73B9 50%, #314E74 100%);
 }
 
 .experience-page::before,
 .experience-page::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    pointer-events: none;
-}
-
-.experience-page::before {
-    width: min(64vw, 780px);
-    height: min(64vw, 780px);
-    border: 1px solid rgba(185, 71, 120, 0.11);
-    border-radius: 48% 52% 55% 45% / 43% 45% 55% 57%;
-    top: 1480px;
-    right: -340px;
-    transform: rotate(-23deg);
-}
-
-.experience-page::after {
-    width: min(55vw, 680px);
-    height: min(42vw, 520px);
-    border-radius: 50%;
-    background: rgba(240, 216, 232, 0.32);
-    filter: blur(1px);
-    bottom: 520px;
-    left: -330px;
+    display: none;
 }
 
 .experience-hero,
@@ -2107,7 +2123,7 @@ footer p {
     position: absolute;
     width: min(72vw, 920px);
     aspect-ratio: 1;
-    border: 1px solid rgba(185, 71, 120, 0.17);
+    border: 1px solid rgba(255, 250, 253, 0.22);
     border-radius: 50%;
     top: 83px;
     left: 50%;
@@ -2118,7 +2134,7 @@ footer p {
 .experience-orbit {
     position: absolute;
     border-radius: 50%;
-    border: 1px solid rgba(105, 65, 119, 0.16);
+    border: 1px solid rgba(255, 250, 253, 0.31);
     pointer-events: none;
 }
 
@@ -2134,12 +2150,12 @@ footer p {
     height: 46px;
     right: max(9vw, 110px);
     bottom: 184px;
-    background: rgba(255, 255, 255, 0.46);
+    background: rgba(255, 250, 253, 0.22);
 }
 
 .experience-kicker,
 .experience-overline {
-    color: var(--experience-berry);
+    color: rgba(255, 242, 250, 0.78);
     font-size: 0.68rem;
     font-weight: 500;
     letter-spacing: 0.17em;
@@ -2165,7 +2181,7 @@ footer p {
 
 .experience-hero-copy {
     max-width: 475px;
-    color: #765c74;
+    color: rgba(255, 248, 252, 0.82);
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.7;
@@ -2178,7 +2194,7 @@ footer p {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    color: #886578;
+    color: rgba(255, 248, 252, 0.75);
     font-size: 0.62rem;
     letter-spacing: 0.14em;
     text-decoration: none;
@@ -2198,7 +2214,7 @@ footer p {
     display: flex;
     align-items: center;
     gap: 13px;
-    color: #805c79;
+    color: rgba(255, 248, 252, 0.74);
     font-size: 0.63rem;
     font-weight: 500;
     letter-spacing: 0.14em;
@@ -2242,7 +2258,7 @@ footer p {
 
 .experience-intro-copy > p:last-child {
     max-width: 515px;
-    color: #735d70;
+    color: rgba(255, 248, 252, 0.82);
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.8;
@@ -2267,7 +2283,7 @@ footer p {
 .experience-intro-note p {
     max-width: 220px;
     margin-top: 14px;
-    color: #735d70;
+    color: rgba(255, 248, 252, 0.88);
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.35rem;
     font-style: italic;
@@ -2282,19 +2298,11 @@ footer p {
     gap: clamp(60px, 12vw, 190px);
     padding: 145px max(7vw, 56px) 120px;
     color: #fff8fb;
-    background: linear-gradient(140deg, #3c1f48 0%, #64264d 51%, #9e3f69 100%);
+    background: transparent;
 }
 
 .experience-moments::before {
-    content: '';
-    position: absolute;
-    width: min(46vw, 620px);
-    aspect-ratio: 1;
-    top: -218px;
-    right: -140px;
-    border: 1px solid rgba(255, 243, 249, 0.23);
-    border-radius: 45% 55% 57% 43% / 58% 48% 52% 42%;
-    transform: rotate(24deg);
+    display: none;
 }
 
 .experience-moments h2 {
@@ -2387,24 +2395,24 @@ footer p {
     justify-content: space-between;
     overflow: hidden;
     padding: 28px;
-    border: 1px solid rgba(91, 50, 87, 0.19);
+    border: 1px solid rgba(255, 250, 253, 0.27);
     border-radius: 2px;
 }
 
 .experience-path--1 {
-    background: #f3e3ed;
+    background: rgba(255, 244, 251, 0.14);
 }
 
 .experience-path--2 {
-    background: #efeaf6;
+    background: rgba(237, 232, 255, 0.16);
 }
 
 .experience-path--3 {
-    background: #f8e7df;
+    background: rgba(223, 239, 255, 0.15);
 }
 
 .experience-path-number {
-    color: rgba(58, 34, 62, 0.47);
+    color: rgba(255, 250, 253, 0.67);
     font-size: 0.68rem;
     letter-spacing: 0.13em;
 }
@@ -2425,7 +2433,7 @@ footer p {
 
 .experience-path p {
     max-width: 245px;
-    color: #6f5a6d;
+    color: rgba(255, 250, 253, 0.79);
     font-size: 0.84rem;
     font-weight: 300;
     line-height: 1.65;
@@ -2437,7 +2445,7 @@ footer p {
     height: 1px;
     right: -34px;
     bottom: 78px;
-    background: rgba(93, 54, 90, 0.2);
+    background: rgba(255, 250, 253, 0.24);
     transform: rotate(-25deg);
 }
 
@@ -2489,22 +2497,14 @@ footer p {
 
 .experience-future-copy > p {
     max-width: 490px;
-    color: #735d70;
+    color: rgba(255, 248, 252, 0.82);
     font-size: 0.98rem;
     font-weight: 300;
     line-height: 1.75;
 }
 
 .experience-future-shape {
-    position: absolute;
-    width: min(50vw, 640px);
-    aspect-ratio: 1;
-    right: max(-8vw, -90px);
-    top: -38px;
-    border: 1px solid rgba(185, 71, 120, 0.2);
-    border-radius: 53% 47% 43% 57% / 44% 54% 46% 56%;
-    background: radial-gradient(circle at 30% 25%, rgba(249, 226, 236, 0.92), rgba(230, 215, 244, 0.42) 42%, transparent 70%);
-    transform: rotate(-20deg);
+    display: none;
 }
 
 .experience-future-actions {

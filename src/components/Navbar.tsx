@@ -1,13 +1,15 @@
 'use client'
 
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
+    const { pathname } = useLocation()
+    const isExperiencePage = pathname === '/experience'
 
     return (
-        <nav>
+        <nav className={isExperiencePage ? 'nav--experience' : undefined}>
             <a className="nav-logo" href="/"><span>WIT</span> @ UniMelb</a>
             <ul className={isOpen ? 'nav-links open' : 'nav-links'}>
                 <li><Link to="/experience">Experience WiT</Link></li>

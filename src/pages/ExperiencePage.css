@@ -1,0 +1,186 @@
+.experience-showcase {
+    align-items: center;
+    display: flex;
+    min-height: 100svh;
+    overflow: hidden;
+    padding: 8.5rem 0 4rem;
+    position: relative;
+}
+
+.experience-showcase__inner {
+    align-items: end;
+    display: grid;
+    gap: clamp(3rem, 8vw, 8rem);
+    grid-template-columns: minmax(0, 1.05fr) minmax(17rem, 0.75fr);
+    position: relative;
+    z-index: 1;
+}
+
+.experience-showcase__intro {
+    max-width: 44rem;
+}
+
+.experience-showcase__eyebrow,
+.experience-showcase__panel-label {
+    color: var(--ds-pink-300);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.experience-showcase h1 {
+    color: #ffb6d2;
+    font-family: var(--ds-font-display);
+    font-size: clamp(5.5rem, 13vw, 11rem);
+    font-weight: 400;
+    letter-spacing: -0.105em;
+    line-height: 0.68;
+    margin: 1.5rem 0 2rem -0.06em;
+    text-transform: uppercase;
+}
+
+.experience-showcase h1 em {
+    color: #f5bce3;
+    font-style: normal;
+}
+
+.experience-showcase__lead {
+    color: #ffffff;
+    font-size: clamp(1.1rem, 2vw, 1.42rem);
+    line-height: 1.35;
+    margin-bottom: 2rem;
+    max-width: 27rem;
+}
+
+.experience-showcase__panel {
+    backdrop-filter: blur(1.6rem);
+    background: rgba(255, 238, 253, 0.12);
+    border: 1px solid var(--ds-glass-border);
+    border-radius: var(--ds-radius-lg);
+    box-shadow: var(--ds-shadow);
+    padding: clamp(1.5rem, 4vw, 2.6rem);
+}
+
+.experience-showcase__statement {
+    color: var(--ds-cream);
+    font-family: var(--ds-font-display);
+    font-size: clamp(2rem, 3.4vw, 3.1rem);
+    letter-spacing: -0.07em;
+    line-height: 0.93;
+    margin: 1.5rem 0 2.5rem;
+    max-width: 11ch;
+}
+
+.experience-showcase__principles {
+    display: grid;
+    gap: 1.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.experience-showcase__principles li {
+    align-items: start;
+    border-top: 1px solid rgba(255, 255, 255, 0.24);
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 2rem 1fr;
+    padding-top: 1rem;
+}
+
+.experience-showcase__principles span {
+    color: var(--ds-pink-300);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.experience-showcase__principles h2 {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.28rem;
+}
+
+.experience-showcase__principles p {
+    color: var(--ds-ink-muted);
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+
+.experience-showcase__halo {
+    border: 1px solid rgba(255, 222, 253, 0.32);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.experience-showcase__halo--one {
+    height: min(70vw, 60rem);
+    right: -25rem;
+    top: -20rem;
+    width: min(70vw, 60rem);
+}
+
+.experience-showcase__halo--two {
+    bottom: -25rem;
+    height: min(62vw, 46rem);
+    left: -23rem;
+    width: min(62vw, 46rem);
+}
+
+.experience-showcase__grid {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.13) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.13) 1px, transparent 1px);
+    background-size: 2.5rem 2.5rem;
+    height: 18rem;
+    opacity: 0.26;
+    position: absolute;
+    right: -2rem;
+    top: 24%;
+    transform: perspective(32rem) rotateY(-33deg) rotateX(18deg);
+    width: 31rem;
+}
+
+.experience-showcase__footer-note {
+    bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 0.7rem;
+    left: 50%;
+    letter-spacing: 0.07em;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    transform: translateX(-50%);
+    width: calc(100% - 2rem);
+}
+
+@media (max-width: 48rem) {
+    .experience-showcase {
+        align-items: start;
+        padding: 8rem 0 6rem;
+    }
+
+    .experience-showcase__inner {
+        align-items: start;
+        grid-template-columns: 1fr;
+    }
+
+    .experience-showcase h1 {
+        font-size: clamp(5rem, 22vw, 7.5rem);
+    }
+
+    .experience-showcase__panel {
+        max-width: 32rem;
+    }
+
+    .experience-showcase__grid {
+        right: -15rem;
+        top: 8rem;
+    }
+
+    .experience-showcase__footer-note {
+        bottom: 1rem;
+    }
+}

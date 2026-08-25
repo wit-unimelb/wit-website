@@ -1,0 +1,56 @@
+#root {
+    min-height: 100%;
+}
+
+html body {
+    background:
+        radial-gradient(circle at 88% 7%, rgba(255, 184, 212, 0.44), transparent 25rem),
+        radial-gradient(circle at 7% 34%, rgba(116, 138, 243, 0.5), transparent 31rem),
+        linear-gradient(155deg, #301047 0%, #6c4b7d 43%, #5e79b4 72%, #493467 100%);
+}
+
+.site-shell {
+    background:
+        radial-gradient(circle at 78% 16%, rgba(255, 207, 224, 0.2), transparent 20rem),
+        radial-gradient(circle at 18% 66%, rgba(157, 180, 255, 0.15), transparent 27rem),
+        linear-gradient(155deg, #301047 0%, #6c4b7d 43%, #5e79b4 72%, #493467 100%);
+    isolation: isolate;
+    min-height: 100vh;
+    position: relative;
+}
+
+.site-shell::before {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.28) 0.7px, transparent 0.7px);
+    background-size: 0.62rem 0.62rem;
+    content: '';
+    inset: 0;
+    opacity: 0.16;
+    pointer-events: none;
+    position: fixed;
+    z-index: -1;
+}
+
+.site-main {
+    min-height: 100vh;
+}
+
+.ds-container {
+    width: min(calc(100% - 3rem), var(--ds-container));
+    margin-inline: auto;
+}
+
+.new-site-page {
+    color: var(--ds-ink);
+    font-family: var(--ds-font-sans);
+    overflow: clip;
+}
+
+.new-site-page a {
+    color: inherit;
+}
+
+@media (max-width: 40rem) {
+    .ds-container {
+        width: min(calc(100% - 2rem), var(--ds-container));
+    }
+}

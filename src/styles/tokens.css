@@ -1,0 +1,34 @@
+:root {
+    --ds-ink: #ffffff;
+    --ds-ink-muted: rgba(255, 255, 255, 0.76);
+    --ds-plum-950: #25113a;
+    --ds-plum-800: #4d2e66;
+    --ds-plum-700: #5e3e67;
+    --ds-lilac-200: #d8ddff;
+    --ds-lilac-100: #eef1ff;
+    --ds-pink-300: #ffc7d9;
+    --ds-pink-200: #ffe0ec;
+    --ds-cream: #fff8ee;
+    --ds-glass: rgba(255, 238, 253, 0.12);
+    --ds-glass-border: rgba(255, 238, 253, 0.28);
+    --ds-shadow: 0 24px 80px rgba(31, 14, 60, 0.22);
+
+    --ds-font-sans: "Momo Trust Sans", "DM Sans", Arial, sans-serif;
+    --ds-font-display: "Momo Trust Display", "Cormorant Garamond", Georgia, serif;
+
+    --ds-space-1: 0.5rem;
+    --ds-space-2: 0.75rem;
+    --ds-space-3: 1rem;
+    --ds-space-4: 1.5rem;
+    --ds-space-5: 2rem;
+    --ds-space-6: 3rem;
+    --ds-space-7: 4.5rem;
+    --ds-space-8: 6rem;
+    --ds-space-9: 8rem;
+
+    --ds-radius-sm: 0.75rem;
+    --ds-radius-md: 1.25rem;
+    --ds-radius-lg: 2rem;
+    --ds-radius-pill: 999px;
+    --ds-container: 75rem;
+}
