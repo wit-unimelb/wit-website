@@ -19,7 +19,7 @@ nav.site-header {
 }
 
 .site-header__brand {
-    background: linear-gradient(90deg, var(--ds-lilac-200), var(--ds-pink-300));
+    background: linear-gradient(90deg, var(--ds-action-start), var(--ds-action-end));
     background-clip: text;
     color: var(--ds-pink-300);
     font-family: var(--ds-font-sans);

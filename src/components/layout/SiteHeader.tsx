@@ -8,6 +8,7 @@ const navigation = [
     { label: 'Sponsors', to: '/sponsors' },
     { label: 'Merchandise', to: '/merchandise' },
     { label: 'About Us', to: '/about' },
+    { label: 'Contact', to: '/contact' },
 ]
 
 export default function SiteHeader() {
@@ -35,7 +36,6 @@ export default function SiteHeader() {
                         {item.label}
                     </Link>
                 ))}
-                <a className="site-header__link" href="mailto:women.in.ict.unimelb@gmail.org" onClick={closeMenu}>Contact</a>
                 <Button
                     href="https://umsu.unimelb.edu.au/buddy-up/clubs/clubs-listing/join/website/"
                     target="_blank"

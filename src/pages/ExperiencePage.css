@@ -30,7 +30,9 @@
 }
 
 .experience-showcase h1 {
-    color: #ffb6d2;
+    background: linear-gradient(90deg, var(--ds-action-start), var(--ds-action-end));
+    background-clip: text;
+    color: var(--ds-pink-300);
     font-family: var(--ds-font-display);
     font-size: clamp(5.5rem, 13vw, 11rem);
     font-weight: 400;
@@ -38,10 +40,12 @@
     line-height: 0.68;
     margin: 1.5rem 0 2rem -0.06em;
     text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .experience-showcase h1 em {
-    color: #f5bce3;
+    color: inherit;
     font-style: normal;
 }
 

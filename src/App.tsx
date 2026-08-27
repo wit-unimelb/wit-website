@@ -1,12 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import SiteFooter from '@/components/layout/SiteFooter'
 import SiteHeader from '@/components/layout/SiteHeader'
-import Home from '@/pages/Home'
-import SponsorsPage from '@/pages/SponsorsPage'
-import EventsPage from '@/pages/EventsPage'
-import AboutPage from '@/pages/AboutPage'
-import ExperiencePage from '@/pages/ExperiencePage'
-import MerchandisePage from '@/pages/MerchandisePage'
+import BlankPage from '@/pages/BlankPage'
 
 export default function App() {
     return (
@@ -14,14 +9,17 @@ export default function App() {
             <SiteHeader />
             <main className="site-main">
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<AboutPage />} />
-                    <Route path="/sponsors" element={<SponsorsPage />} />
-                    <Route path="/events" element={<EventsPage />} />
-                    <Route path="/merchandise" element={<MerchandisePage />} />
-                    <Route path="/experience" element={<ExperiencePage />} />
+                    <Route path="/" element={<BlankPage />} />
+                    <Route path="/about" element={<BlankPage />} />
+                    <Route path="/sponsors" element={<BlankPage />} />
+                    <Route path="/events" element={<BlankPage />} />
+                    <Route path="/merchandise" element={<BlankPage />} />
+                    <Route path="/contact" element={<BlankPage />} />
+                    <Route path="/experience" element={<BlankPage />} />
+                    <Route path="*" element={<BlankPage />} />
                 </Routes>
             </main>
+            <div className="footer-data-grid" aria-hidden="true" />
             <SiteFooter />
         </div>
     )
