@@ -1,5 +1,5 @@
-import Sponsors from '@/components/Sponsors'
+import PageCanvas from '@/components/layout/PageCanvas'
 
 export default function SponsorsPage() {
-    return <Sponsors />
+    return <PageCanvas page="sponsors" />
 }

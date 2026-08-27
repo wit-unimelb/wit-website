@@ -1,5 +1,5 @@
-import Events from '../components/Events'
+import PageCanvas from '@/components/layout/PageCanvas'
 
 export default function EventsPage() {
-    return <Events />
+    return <PageCanvas page="events" />
 }

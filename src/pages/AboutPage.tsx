@@ -1,5 +1,5 @@
-import About from '@/components/About'
+import PageCanvas from '@/components/layout/PageCanvas'
 
 export default function AboutPage() {
-    return <About />
+    return <PageCanvas page="about" />
 }
