@@ -29,6 +29,15 @@
     padding: clamp(1.25rem, 2.5vw, 2rem);
 }
 
+.contact-page__honeypot {
+    height: 1px;
+    left: -9999px;
+    opacity: 0;
+    position: absolute;
+    top: auto;
+    width: 1px;
+}
+
 .contact-page__form h2,
 .contact-page__detail-group h2 {
     background: linear-gradient(90deg, #ffffff, #ffc7d9);
@@ -54,7 +63,7 @@
 }
 
 .contact-page .ui-form-field > label {
-    font-size: 0.85rem;
+    font-size: 0.92rem;
     font-weight: var(--ds-font-weight-label);
 }
 

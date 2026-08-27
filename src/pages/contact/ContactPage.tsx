@@ -5,14 +5,44 @@ import PageHero from '@/components/ui/PageHero'
 import './ContactPage.css'
 
 const contactEmail = 'women.in.ict.unimelb@gmail.org'
+const contactEndpoint = import.meta.env.VITE_CONTACT_API_URL ?? 'https://wit-contact-api.women-in-ict-unimelb.workers.dev/api/contact'
+
+type SubmissionState = 'idle' | 'submitting' | 'success' | 'error'
 
 export default function ContactPage() {
-    const [isSubmitted, setIsSubmitted] = useState(false)
+    const [submissionState, setSubmissionState] = useState<SubmissionState>('idle')
     const [isDiscordNoticeVisible, setIsDiscordNoticeVisible] = useState(false)
 
-    function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    async function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
-        setIsSubmitted(true)
+        const form = event.currentTarget
+        const formData = new FormData(form)
+
+        setSubmissionState('submitting')
+
+        try {
+            const response = await fetch(contactEndpoint, {
+                body: JSON.stringify({
+                    email: formData.get('email'),
+                    firstName: formData.get('firstName'),
+                    lastName: formData.get('lastName'),
+                    message: formData.get('message'),
+                    phone: formData.get('phone'),
+                    website: formData.get('website'),
+                }),
+                headers: { 'Content-Type': 'application/json' },
+                method: 'POST',
+            })
+
+            if (!response.ok) {
+                throw new Error('Unable to submit the contact form.')
+            }
+
+            form.reset()
+            setSubmissionState('success')
+        } catch {
+            setSubmissionState('error')
+        }
     }
 
     return (
@@ -26,6 +56,8 @@ export default function ContactPage() {
             <div className="contact-page__content ds-container">
                 <form className="contact-page__form ui-glass-panel ui-glass-panel--strong" onSubmit={handleSubmit}>
                     <h2>Send us questions!</h2>
+
+                    <input aria-hidden="true" autoComplete="off" className="contact-page__honeypot" name="website" tabIndex={-1} type="text" />
 
                     <div className="contact-page__fields">
                         <div className="ui-form-field">
@@ -54,9 +86,12 @@ export default function ContactPage() {
                         </div>
                     </div>
 
-                    <button className={`contact-page__submit${isSubmitted ? ' is-submitted' : ''}`} disabled={isSubmitted} type="submit">
-                        <span aria-live="polite" key={isSubmitted ? 'submitted' : 'default'}>
-                            {isSubmitted ? 'Thank you, we will be in touch :)' : 'Send Message'}
+                    <button className={`contact-page__submit${submissionState === 'success' ? ' is-submitted' : ''}`} disabled={submissionState === 'submitting' || submissionState === 'success'} type="submit">
+                        <span aria-live="polite" key={submissionState}>
+                            {submissionState === 'success' ? 'Thank you, we will be in touch :)' : null}
+                            {submissionState === 'submitting' ? 'Sending message…' : null}
+                            {submissionState === 'error' ? 'Unable to send — please try again' : null}
+                            {submissionState === 'idle' ? 'Send Message' : null}
                         </span>
                     </button>
                 </form>
