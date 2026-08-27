@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Momo+Trust+Sans:wght@200..800&display=swap");
 
 /*
 Design tokens 
@@ -30,7 +30,7 @@ html,
 body {
     height: 100%;
     background: var(--cream);
-    font-family: 'DM Sans', sans-serif;
+    font-family: var(--ds-font-sans);
     overflow-x: hidden;
     margin: 0;
     padding: 0;

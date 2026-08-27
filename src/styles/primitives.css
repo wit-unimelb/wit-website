@@ -1,0 +1,154 @@
+/*
+   Shared page-building primitives
+   These classes provide the common visual language. Page styles should only
+   define composition and content-specific behaviour.
+*/
+
+.ui-page-hero {
+    margin-inline: auto;
+    max-width: 60rem;
+    padding: clamp(8.5rem, 14vw, 11.75rem) var(--ds-space-4) var(--ds-space-6);
+    position: relative;
+    text-align: center;
+}
+
+.ui-page-hero--compact {
+    padding-bottom: var(--ds-space-5);
+}
+
+.ui-page-hero__eyebrow {
+    border: 1px solid rgba(255, 255, 255, 0.58);
+    border-radius: var(--ds-radius-pill);
+    color: var(--ds-ink);
+    display: inline-flex;
+    font-size: 0.75rem;
+    font-weight: 650;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: var(--ds-space-3);
+    padding: 0.55rem 1rem;
+    text-transform: uppercase;
+}
+
+.ui-page-hero__title,
+.ui-section-heading {
+    background: linear-gradient(90deg, var(--ds-action-start), var(--ds-action-end));
+    background-clip: text;
+    color: var(--ds-pink-300);
+    font-family: var(--ds-font-display);
+    font-size: clamp(2.8rem, 7vw, 4.4rem);
+    font-weight: 750;
+    letter-spacing: -0.06em;
+    line-height: 0.98;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ui-page-hero__lead {
+    color: var(--ds-ink);
+    font-size: clamp(1.05rem, 2.1vw, 1.35rem);
+    font-style: italic;
+    line-height: 1.28;
+    margin: var(--ds-space-3) auto 0;
+    max-width: 43rem;
+}
+
+.ui-section-intro {
+    margin-inline: auto;
+    max-width: 50rem;
+    text-align: center;
+}
+
+.ui-section-heading {
+    font-size: clamp(2rem, 4vw, 3.1rem);
+}
+
+.ui-glass-panel {
+    backdrop-filter: blur(1.5rem);
+    background: var(--ds-surface-glass);
+    border: 1px solid var(--ds-border-glass);
+    border-radius: var(--ds-radius-lg);
+    box-shadow: var(--ds-shadow);
+}
+
+.ui-glass-panel--strong {
+    background: var(--ds-surface-glass-strong);
+}
+
+.ui-form-field {
+    display: grid;
+    gap: var(--ds-space-1);
+}
+
+.ui-form-field > label {
+    color: var(--ds-ink);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.ui-form-field :is(input, textarea) {
+    background: var(--ds-surface-input);
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    border-radius: var(--ds-radius-sm);
+    color: var(--ds-ink);
+    min-height: 2.9rem;
+    padding: 0.75rem 0.9rem;
+    width: 100%;
+}
+
+.ui-form-field textarea {
+    min-height: 9rem;
+    resize: vertical;
+}
+
+.ui-form-field :is(input, textarea)::placeholder {
+    color: rgba(255, 255, 255, 0.62);
+}
+
+.ui-form-field :is(input, textarea):focus-visible {
+    border-color: var(--ds-lilac-100);
+    outline: 3px solid rgba(216, 221, 255, 0.34);
+    outline-offset: 2px;
+}
+
+.ui-social-links {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ui-social-links a {
+    align-items: center;
+    border-radius: 50%;
+    display: inline-flex;
+    height: 1.65rem;
+    justify-content: center;
+    transition: opacity 160ms ease, transform 160ms ease;
+    width: 1.65rem;
+}
+
+.ui-social-links a:hover {
+    opacity: 0.78;
+    transform: translateY(-2px);
+}
+
+.ui-social-links a:focus-visible {
+    outline: 3px solid var(--ds-pink-300);
+    outline-offset: 3px;
+}
+
+.ui-social-links img {
+    filter: brightness(0) invert(1);
+    height: 1.35rem;
+    width: 1.35rem;
+}
+
+@media (max-width: 40rem) {
+    .ui-page-hero {
+        padding-inline: var(--ds-space-3);
+        padding-top: 7.5rem;
+    }
+}

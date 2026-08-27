@@ -4,9 +4,9 @@ import Button from '@/components/ui/Button'
 import './SiteHeader.css'
 
 const navigation = [
-    { label: 'Experience', to: '/experience' },
     { label: 'Events', to: '/events' },
     { label: 'Sponsors', to: '/sponsors' },
+    { label: 'Merchandise', to: '/merchandise' },
     { label: 'About Us', to: '/about' },
 ]
 
@@ -14,12 +14,11 @@ export default function SiteHeader() {
     const [isOpen, setIsOpen] = useState(false)
     const { pathname } = useLocation()
     const isHome = pathname === '/'
-    const isExperience = pathname === '/experience'
 
     const closeMenu = () => setIsOpen(false)
 
     return (
-        <nav className={`site-header${isHome ? ' site-header--home' : ''}${isExperience ? ' site-header--experience' : ''}`} aria-label="Primary navigation">
+        <nav className={`site-header${isHome ? ' site-header--home' : ''}`} aria-label="Primary navigation">
             <Link className="site-header__brand" to="/" onClick={closeMenu} aria-label="Women in Technology home">
                 WIT
             </Link>
@@ -36,11 +35,12 @@ export default function SiteHeader() {
                         {item.label}
                     </Link>
                 ))}
-                <a className="site-header__link" href="mailto:info@witunimelb.org" onClick={closeMenu}>Contact</a>
+                <a className="site-header__link" href="mailto:women.in.ict.unimelb@gmail.org" onClick={closeMenu}>Contact</a>
                 <Button
                     href="https://umsu.unimelb.edu.au/buddy-up/clubs/clubs-listing/join/website/"
                     target="_blank"
                     rel="noreferrer"
+                    tone="join"
                     onClick={closeMenu}
                 >
                     Join Us

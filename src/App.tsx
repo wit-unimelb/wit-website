@@ -6,6 +6,7 @@ import SponsorsPage from '@/pages/SponsorsPage'
 import EventsPage from '@/pages/EventsPage'
 import AboutPage from '@/pages/AboutPage'
 import ExperiencePage from '@/pages/ExperiencePage'
+import MerchandisePage from '@/pages/MerchandisePage'
 
 export default function App() {
     return (
@@ -17,6 +18,7 @@ export default function App() {
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/sponsors" element={<SponsorsPage />} />
                     <Route path="/events" element={<EventsPage />} />
+                    <Route path="/merchandise" element={<MerchandisePage />} />
                     <Route path="/experience" element={<ExperiencePage />} />
                 </Routes>
             </main>

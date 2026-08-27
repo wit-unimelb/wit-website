@@ -4,16 +4,18 @@
 
 html body {
     background:
-        radial-gradient(circle at 88% 7%, rgba(255, 184, 212, 0.44), transparent 25rem),
-        radial-gradient(circle at 7% 34%, rgba(116, 138, 243, 0.5), transparent 31rem),
-        linear-gradient(155deg, #301047 0%, #6c4b7d 43%, #5e79b4 72%, #493467 100%);
+        radial-gradient(circle at 88% 7%, var(--ds-aurora-rose-glow), transparent 25rem),
+        radial-gradient(circle at 7% 34%, var(--ds-aurora-blue-glow), transparent 31rem),
+        linear-gradient(155deg, var(--ds-aurora-deep) 0%, var(--ds-aurora-mauve) 43%, var(--ds-aurora-sky) 72%, var(--ds-aurora-night) 100%);
+    color: var(--ds-ink);
+    font-family: var(--ds-font-sans);
 }
 
 .site-shell {
     background:
         radial-gradient(circle at 78% 16%, rgba(255, 207, 224, 0.2), transparent 20rem),
         radial-gradient(circle at 18% 66%, rgba(157, 180, 255, 0.15), transparent 27rem),
-        linear-gradient(155deg, #301047 0%, #6c4b7d 43%, #5e79b4 72%, #493467 100%);
+        linear-gradient(155deg, var(--ds-aurora-deep) 0%, var(--ds-aurora-mauve) 43%, var(--ds-aurora-sky) 72%, var(--ds-aurora-night) 100%);
     isolation: isolate;
     min-height: 100vh;
     position: relative;
@@ -47,6 +49,16 @@ html body {
 
 .new-site-page a {
     color: inherit;
+}
+
+/* Optional lower-page accent shared by the supplied page designs. */
+.ui-data-grid {
+    background-image: radial-gradient(rgba(21, 27, 80, 0.72) 0.85px, transparent 0.85px);
+    background-size: 0.62rem 0.62rem;
+    height: min(24rem, 35vw);
+    mask-image: linear-gradient(to bottom, transparent, #000 35%, #000);
+    opacity: 0.36;
+    pointer-events: none;
 }
 
 @media (max-width: 40rem) {

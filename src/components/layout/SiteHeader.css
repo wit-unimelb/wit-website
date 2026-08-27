@@ -1,8 +1,8 @@
 nav.site-header {
     align-items: center;
     backdrop-filter: blur(18px);
-    background: rgba(48, 21, 73, 0.56);
-    border-bottom: 1px solid rgba(255, 238, 253, 0.2);
+    background: linear-gradient(180deg, rgba(36, 15, 51, 0.58), rgba(36, 15, 51, 0));
+    border-bottom: 1px solid transparent;
     display: flex;
     height: 4.25rem;
     justify-content: space-between;
@@ -16,21 +16,19 @@ nav.site-header {
 
 .site-header--home {
     background: linear-gradient(180deg, rgba(35, 17, 57, 0.48), rgba(35, 17, 57, 0.08));
-    border-bottom-color: rgba(255, 238, 253, 0.1);
-}
-
-.site-header--experience {
-    background: rgba(36, 15, 51, 0.72);
-    border-bottom-color: rgba(255, 250, 253, 0.18);
 }
 
 .site-header__brand {
-    color: #bf7fd0;
+    background: linear-gradient(90deg, var(--ds-lilac-200), var(--ds-pink-300));
+    background-clip: text;
+    color: var(--ds-pink-300);
     font-family: var(--ds-font-sans);
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    letter-spacing: -0.06em;
+    letter-spacing: -0.07em;
     text-decoration: none;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .site-header__links {
@@ -43,10 +41,15 @@ nav.site-header {
     border-radius: var(--ds-radius-pill);
     color: rgba(255, 255, 255, 0.9);
     font-family: var(--ds-font-sans);
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     padding: 0.55rem 0.75rem;
     text-decoration: none;
     transition: background-color 160ms ease, color 160ms ease;
+}
+
+.site-header .ds-button {
+    min-height: 2.2rem;
+    padding: 0.65rem 1.3rem;
 }
 
 .site-header__link:hover,
@@ -93,11 +96,6 @@ nav.site-header {
         position: absolute;
         right: 0;
         top: 100%;
-    }
-
-    .site-header--experience .site-header__links {
-        background: rgba(36, 15, 51, 0.98);
-        border-bottom-color: rgba(255, 250, 253, 0.18);
     }
 
     .site-header__links--open {

@@ -2,7 +2,7 @@ import type { AnchorHTMLAttributes, PropsWithChildren } from 'react'
 import './Button.css'
 
 type ButtonProps = PropsWithChildren<AnchorHTMLAttributes<HTMLAnchorElement>> & {
-    tone?: 'light' | 'outline'
+    tone?: 'light' | 'outline' | 'gradient' | 'join' | 'ghost'
 }
 
 export default function Button({ children, className = '', tone = 'light', ...props }: ButtonProps) {

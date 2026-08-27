@@ -1,5 +1,6 @@
 .site-footer {
-    background: #453052;
+    background: rgba(40, 29, 84, 0.58);
+    border-top: 1px solid rgba(255, 238, 253, 0.12);
     color: rgba(255, 255, 255, 0.86);
     font-family: var(--ds-font-sans);
     padding: 1.35rem 0;
@@ -14,26 +15,22 @@
 }
 
 .site-footer__brand {
+    background: linear-gradient(90deg, var(--ds-lilac-200), var(--ds-pink-300));
+    background-clip: text;
     color: var(--ds-pink-300);
-    font-size: 1.05rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .site-footer__links {
-    display: flex;
-    gap: 0.9rem;
+    gap: 0.55rem;
     justify-content: end;
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-.site-footer a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.site-footer a:hover {
-    color: var(--ds-pink-300);
 }
 
 @media (max-width: 48rem) {
