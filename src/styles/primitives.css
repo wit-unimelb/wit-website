@@ -22,7 +22,7 @@
     color: var(--ds-ink);
     display: inline-flex;
     font-size: 0.75rem;
-    font-weight: 650;
+    font-weight: var(--ds-font-weight-medium);
     letter-spacing: 0.04em;
     line-height: 1;
     margin-bottom: var(--ds-space-3);
@@ -37,7 +37,7 @@
     color: var(--ds-pink-300);
     font-family: var(--ds-font-display);
     font-size: clamp(2.8rem, 7vw, 4.4rem);
-    font-weight: 750;
+    font-weight: var(--ds-font-weight-heading);
     letter-spacing: -0.06em;
     line-height: 0.98;
     -webkit-background-clip: text;
@@ -46,7 +46,7 @@
 
 .ui-page-hero__lead {
     color: var(--ds-ink);
-    font-size: clamp(1.05rem, 2.1vw, 1.35rem);
+    font-size: clamp(0.98rem, 1.8vw, 1.2rem);
     font-style: italic;
     line-height: 1.28;
     margin: var(--ds-space-3) auto 0;
@@ -83,7 +83,7 @@
 .ui-form-field > label {
     color: var(--ds-ink);
     font-size: 0.95rem;
-    font-weight: 600;
+    font-weight: var(--ds-font-weight-label);
 }
 
 .ui-form-field :is(input, textarea) {

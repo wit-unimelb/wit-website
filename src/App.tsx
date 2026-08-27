@@ -1,12 +1,12 @@
 import { Routes, Route } from 'react-router-dom'
 import SiteFooter from '@/components/layout/SiteFooter'
 import SiteHeader from '@/components/layout/SiteHeader'
-import AboutPage from '@/pages/AboutPage'
-import ContactPage from '@/pages/ContactPage'
-import EventsPage from '@/pages/EventsPage'
+import AboutPage from '@/pages/about/AboutPage'
+import ContactPage from '@/pages/contact/ContactPage'
+import EventsPage from '@/pages/events/EventsPage'
 import HomePage from '@/pages/HomePage'
-import MerchandisePage from '@/pages/MerchandisePage'
-import SponsorsPage from '@/pages/SponsorsPage'
+import MerchandisePage from '@/pages/merchandise/MerchandisePage'
+import SponsorsPage from '@/pages/sponsors/SponsorsPage'
 
 export default function App() {
     return (
@@ -23,7 +23,6 @@ export default function App() {
                     <Route path="*" element={<HomePage />} />
                 </Routes>
             </main>
-            <div className="footer-data-grid" aria-hidden="true" />
             <SiteFooter />
         </div>
     )

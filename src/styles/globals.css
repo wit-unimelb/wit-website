@@ -3,6 +3,7 @@
 }
 
 html {
+    font-size: 15px;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -43,6 +44,23 @@ html body {
 
 .site-main {
     min-height: 100vh;
+    position: relative;
+}
+
+.site-main::after {
+    background: url('/footer-data-grid.png') center bottom / min(100%, 80rem) auto repeat-x;
+    bottom: 0;
+    content: '';
+    height: min(68.75vw, 55rem);
+    inset-inline: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+}
+
+.site-main > * {
+    position: relative;
+    z-index: 1;
 }
 
 .page-canvas {
@@ -65,7 +83,6 @@ html body {
 }
 
 /* Shared lower-page accent from the supplied Figma designs. */
-.footer-data-grid,
 .ui-data-grid {
     background: url('/footer-data-grid.png') center bottom / min(100%, 80rem) auto repeat-x;
     height: min(68.75vw, 55rem);

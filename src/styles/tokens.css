@@ -32,6 +32,10 @@
 
     --ds-font-sans: "Momo Trust Sans", "DM Sans", Arial, sans-serif;
     --ds-font-display: "Momo Trust Sans", "DM Sans", Arial, sans-serif;
+    --ds-font-weight-regular: 400;
+    --ds-font-weight-label: 350;
+    --ds-font-weight-medium: 500;
+    --ds-font-weight-heading: 550;
 
     --ds-space-1: 0.5rem;
     --ds-space-2: 0.75rem;
