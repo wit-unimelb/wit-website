@@ -1,0 +1,115 @@
+.about-section {
+    padding: var(--ds-space-8) var(--ds-space-4);
+}
+
+.about-section__heading {
+    margin-bottom: var(--ds-space-6);
+    text-align: center;
+}
+
+.about-intro-panels {
+    display: grid;
+    gap: var(--ds-space-4);
+    margin: 0 auto var(--ds-space-7);
+    max-width: 60rem;
+    padding: 0 var(--ds-space-4);
+}
+
+.about-intro-panel {
+    padding: var(--ds-space-6) var(--ds-space-4);
+    position: relative;
+    text-align: center;
+}
+
+.about-intro-panel--committee {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 16rem;
+}
+
+.about-intro-panel__title {
+    font-size: 1.5rem;
+    font-weight: var(--ds-font-weight-heading);
+}
+
+.about-intro-panel__sparkle {
+    color: var(--ds-lilac-100);
+    font-size: 1.25rem;
+    left: 1.5rem;
+    opacity: 0.75;
+    position: absolute;
+    top: 1.25rem;
+}
+
+.about-people {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ds-space-5) var(--ds-space-6);
+    justify-content: center;
+    margin-inline: auto;
+    max-width: 52rem;
+}
+
+.about-people--wide {
+    max-width: 44rem;
+}
+
+.about-person {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--ds-space-2);
+    text-align: center;
+    width: 9rem;
+}
+
+.about-person--wide {
+    width: 11rem;
+}
+
+.about-person__photo {
+    aspect-ratio: 1 / 1;
+    background: var(--ds-cream);
+    border-radius: var(--ds-radius-md);
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.about-person__photo img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.about-person__overlay {
+    align-items: center;
+    background: rgba(37, 17, 58, 0.72);
+    color: var(--ds-ink);
+    display: flex;
+    font-size: 0.85rem;
+    font-weight: var(--ds-font-weight-medium);
+    inset: 0;
+    justify-content: center;
+    opacity: 0;
+    padding: 0.5rem;
+    position: absolute;
+    text-align: center;
+    transition: opacity 160ms ease;
+}
+
+.about-person__photo:hover .about-person__overlay,
+.about-person__photo:focus-within .about-person__overlay {
+    opacity: 1;
+}
+
+.about-person__role {
+    font-size: 0.95rem;
+    line-height: 1.25;
+}
+
+.about-person__role strong {
+    font-weight: var(--ds-font-weight-heading);
+}
