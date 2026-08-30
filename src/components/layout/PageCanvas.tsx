@@ -1,3 +1,4 @@
+import './PageCanvas.css'
 type PageCanvasProps = {
     page: string
 }

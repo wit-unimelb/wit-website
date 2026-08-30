@@ -1,10 +1,21 @@
 .about-section {
-    padding: var(--ds-space-8) var(--ds-space-4);
+    margin: 0 auto var(--ds-space-6);
+    max-width: 64rem;
+    padding: var(--ds-space-6) var(--ds-space-4);
 }
 
 .about-section__heading {
-    margin-bottom: var(--ds-space-6);
+    margin-bottom: var(--ds-space-4);
     text-align: center;
+}
+
+.about-section__group-photo {
+    border-radius: var(--ds-radius-md);
+    display: block;
+    height: auto;
+    margin: 0 auto var(--ds-space-6);
+    max-width: 40rem;
+    width: 100%;
 }
 
 .about-intro-panels {
@@ -30,7 +41,6 @@
 
 .about-intro-panel__title {
     font-size: 1.5rem;
-    font-weight: var(--ds-font-weight-heading);
 }
 
 .about-intro-panel__sparkle {
