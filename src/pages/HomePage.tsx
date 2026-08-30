@@ -1,5 +1,9 @@
-import PageCanvas from '@/components/layout/PageCanvas'
+import JoinCTA from '@/components/home/JoinCTA'
 
 export default function HomePage() {
-    return <PageCanvas page="home" />
+    return (
+        <article className="new-site-page home-page">
+            <JoinCTA />
+        </article>
+    )
 }
