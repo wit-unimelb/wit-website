@@ -20,6 +20,8 @@
     --ds-aurora-night: #493467;
     --ds-aurora-rose-glow: rgba(255, 184, 212, 0.44);
     --ds-aurora-blue-glow: rgba(116, 138, 243, 0.5);
+    --ds-background-noise-opacity: 0.25;
+    --ds-background-noise-size: 6rem;
 
     /* Reusable surfaces and actions */
     --ds-surface-glass: rgba(255, 238, 253, 0.12);
