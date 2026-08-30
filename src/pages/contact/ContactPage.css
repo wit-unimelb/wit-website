@@ -38,20 +38,6 @@
     width: 1px;
 }
 
-.contact-page__form h2,
-.contact-page__detail-group h2 {
-    background: linear-gradient(90deg, #ffffff, #ffc7d9);
-    background-clip: text;
-    color: #ffc7d9;
-    font-family: var(--ds-font-display);
-    font-size: clamp(1.75rem, 3.3vw, 2.35rem);
-    font-weight: var(--ds-font-weight-heading);
-    letter-spacing: -0.045em;
-    line-height: 1;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
 .contact-page__fields {
     display: grid;
     gap: 1.2rem;
@@ -144,14 +130,6 @@
 .contact-page__detail-group {
     display: grid;
     gap: var(--ds-space-2);
-}
-
-.contact-page__detail-group p,
-.contact-page__detail-group > a,
-.contact-page__social-links {
-    color: var(--ds-ink);
-    font-size: clamp(0.95rem, 1.7vw, 1.15rem);
-    line-height: 1.35;
 }
 
 .contact-page__social-links {

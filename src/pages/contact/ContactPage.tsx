@@ -55,7 +55,7 @@ export default function ContactPage() {
 
             <div className="contact-page__content ds-container">
                 <form className="contact-page__form ui-glass-panel ui-glass-panel--strong" onSubmit={handleSubmit}>
-                    <h2>Send us questions!</h2>
+                    <h2 className="ui-section-heading">Send us questions!</h2>
 
                     <input aria-hidden="true" autoComplete="off" className="contact-page__honeypot" name="website" tabIndex={-1} type="text" />
 
@@ -98,13 +98,13 @@ export default function ContactPage() {
 
                 <aside aria-label="Contact details" className="contact-page__details">
                     <section className="contact-page__detail-group">
-                        <h2>Location</h2>
-                        <p>The University of Melbourne</p>
+                        <h2 className="ui-section-heading">Location</h2>
+                        <p className="ui-section-body">The University of Melbourne</p>
                     </section>
 
                     <section className="contact-page__detail-group">
-                        <h2>Social media</h2>
-                        <ul className="contact-page__social-links">
+                        <h2 className="ui-section-heading">Social media</h2>
+                        <ul className="contact-page__social-links ui-section-body">
                             <li>
                                 <a className="contact-page__social-link" href="https://www.instagram.com/witunimelb/" rel="noreferrer" target="_blank">
                                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg" alt="" />
@@ -135,8 +135,8 @@ export default function ContactPage() {
                     </section>
 
                     <section className="contact-page__detail-group">
-                        <h2>Email</h2>
-                        <a className="contact-page__email" href={`mailto:${contactEmail}`}>{contactEmail}</a>
+                        <h2 className="ui-section-heading">Email</h2>
+                        <a className="contact-page__email ui-section-body" href={`mailto:${contactEmail}`}>{contactEmail}</a>
                     </section>
                 </aside>
             </div>

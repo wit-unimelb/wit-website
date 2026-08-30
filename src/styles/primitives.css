@@ -30,8 +30,7 @@
     text-transform: uppercase;
 }
 
-.ui-page-hero__title,
-.ui-section-heading {
+.ui-page-hero__title {
     background: linear-gradient(90deg, var(--ds-action-start), var(--ds-action-end));
     background-clip: text;
     color: var(--ds-pink-300);
@@ -60,7 +59,22 @@
 }
 
 .ui-section-heading {
-    font-size: clamp(2rem, 4vw, 3.1rem);
+    background: linear-gradient(90deg, #ffffff, var(--ds-pink-300));
+    background-clip: text;
+    color: var(--ds-pink-300);
+    font-family: var(--ds-font-display);
+    font-size: clamp(1.75rem, 3.3vw, 2.35rem);
+    font-weight: var(--ds-font-weight-heading);
+    letter-spacing: -0.045em;
+    line-height: 1;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ui-section-body {
+    color: var(--ds-ink);
+    font-size: clamp(0.95rem, 1.7vw, 1.15rem);
+    line-height: 1.35;
 }
 
 .ui-glass-panel {
