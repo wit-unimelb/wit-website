@@ -1,0 +1,230 @@
+.culture-section {
+    padding: clamp(4.5rem, 9vw, 8rem) 0 clamp(1.5rem, 4vw, 3rem);
+}
+
+.culture-section__inner {
+    width: min(calc(100% - 3rem), 91rem);
+}
+
+.culture-section__intro {
+    margin-inline: auto;
+    max-width: 70rem;
+    text-align: center;
+}
+
+.culture-section__eyebrow {
+    color: rgba(255, 255, 255, 0.94);
+    font-size: clamp(0.88rem, 1.5vw, 1.18rem);
+    font-weight: var(--ds-font-weight-medium);
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+}
+
+.culture-section__heading {
+    background: linear-gradient(90deg, #ffffff 15%, #ffe0ec 58%, #ffc7d9 100%);
+    background-clip: text;
+    color: var(--ds-pink-200);
+    font-family: var(--ds-font-display);
+    font-size: clamp(2.35rem, 5.4vw, 4.2rem);
+    font-weight: var(--ds-font-weight-heading);
+    letter-spacing: -0.065em;
+    line-height: 1;
+    margin-top: clamp(1.7rem, 3.2vw, 3.2rem);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.culture-section__cards {
+    display: grid;
+    gap: clamp(1rem, 3vw, 2.8rem);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: clamp(3rem, 7vw, 6.6rem);
+}
+
+.culture-card {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    min-block-size: clamp(23rem, 31vw, 28.5rem);
+    padding: 0;
+    perspective: 75rem;
+    position: relative;
+    text-align: center;
+    transition: transform 240ms ease-out;
+    width: 100%;
+}
+
+.culture-card__flipper {
+    display: block;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 420ms cubic-bezier(0.22, 0.72, 0.19, 1);
+    width: 100%;
+}
+
+.culture-card__face {
+    align-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    display: grid;
+    height: 100%;
+    inset: 0;
+    justify-items: center;
+    padding: clamp(1.7rem, 3vw, 2.8rem);
+    position: absolute;
+    transform: rotateY(0deg);
+    width: 100%;
+}
+
+.culture-card__face--back {
+    gap: clamp(0.85rem, 1.5vw, 1.3rem);
+    grid-template-rows: auto auto 1fr;
+    transform: rotateY(180deg);
+}
+
+.culture-card__icon {
+    height: clamp(4.5rem, 7.4vw, 6.7rem);
+    object-fit: contain;
+    width: clamp(4.5rem, 7.4vw, 6.7rem);
+}
+
+.culture-card__title {
+    color: var(--ds-pink-200);
+    font-family: var(--ds-font-display);
+    font-size: clamp(1.45rem, 2.45vw, 2.1rem);
+    font-weight: var(--ds-font-weight-heading);
+    letter-spacing: -0.055em;
+    line-height: 1.04;
+}
+
+.culture-card:nth-child(2) .culture-card__title {
+    color: #d4ffe4;
+}
+
+.culture-card:nth-child(3) .culture-card__title {
+    color: #fff5d0;
+}
+
+.culture-card__description {
+    align-self: start;
+    color: rgba(255, 255, 255, 0.94);
+    font-size: clamp(0.95rem, 1.52vw, 1.2rem);
+    font-weight: var(--ds-font-weight-regular);
+    line-height: 1.25;
+    max-width: 18rem;
+}
+
+.culture-card__sr-only {
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    clip: rect(0, 0, 0, 0);
+}
+
+.culture-card:focus-visible {
+    outline: 3px solid var(--ds-pink-300);
+    outline-offset: 0.45rem;
+}
+
+@media (min-width: 48rem) and (hover: hover) and (pointer: fine) {
+    .culture-card:is(:hover, :focus-visible),
+    .culture-card[data-pinned="true"] {
+        transform: translateY(-0.45rem) scale(1.03);
+        z-index: 1;
+    }
+
+    .culture-card:is(:hover, :focus-visible) .culture-card__flipper,
+    .culture-card[data-pinned="true"] .culture-card__flipper {
+        transform: rotateY(180deg);
+    }
+
+    .culture-card:not(:hover):not(:focus-visible):not([data-pinned="true"]) {
+        transition-timing-function: ease-in;
+    }
+}
+
+@media (max-width: 47.99rem), (hover: none), (pointer: coarse) {
+    .culture-section {
+        padding-top: clamp(3.5rem, 12vw, 4.5rem);
+    }
+
+    .culture-section__inner {
+        width: min(calc(100% - 2rem), 91rem);
+    }
+
+    .culture-section__heading {
+        font-size: clamp(1.9rem, 8.7vw, 2.75rem);
+        margin-top: 1rem;
+    }
+
+    .culture-section__cards {
+        gap: 0.5rem;
+        margin-top: clamp(2.5rem, 9vw, 3.5rem);
+    }
+
+    .culture-card {
+        cursor: default;
+        min-block-size: clamp(17rem, 70vw, 22rem);
+    }
+
+    .culture-card__flipper {
+        transform: none;
+    }
+
+    .culture-card__face {
+        padding: clamp(0.65rem, 2.5vw, 1.05rem) clamp(0.35rem, 1.2vw, 0.7rem);
+        position: relative;
+        transform: none;
+    }
+
+    .culture-card__face--front {
+        display: none;
+    }
+
+    .culture-card__face--back {
+        align-content: center;
+        gap: clamp(0.7rem, 2vw, 1.1rem);
+    }
+
+    .culture-card__icon {
+        height: clamp(2.5rem, 10.5vw, 4rem);
+        width: clamp(2.5rem, 10.5vw, 4rem);
+    }
+
+    .culture-card__title {
+        font-size: clamp(0.76rem, 3.2vw, 1.2rem);
+        letter-spacing: -0.045em;
+    }
+
+    .culture-card__description {
+        font-size: clamp(0.62rem, 2.15vw, 0.86rem);
+        line-height: 1.2;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) and (min-width: 48rem) and (hover: hover) and (pointer: fine) {
+    .culture-card,
+    .culture-card__flipper {
+        transition-duration: 0.01ms;
+    }
+
+    .culture-card__flipper {
+        transform: none;
+    }
+
+    .culture-card__face {
+        position: relative;
+        transform: none;
+    }
+
+    .culture-card__face--front {
+        display: none;
+    }
+}
