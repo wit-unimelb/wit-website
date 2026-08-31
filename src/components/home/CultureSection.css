@@ -15,30 +15,22 @@
 .culture-section__eyebrow {
     color: rgba(255, 255, 255, 0.94);
     font-size: clamp(0.88rem, 1.5vw, 1.18rem);
-    font-weight: var(--ds-font-weight-medium);
+    font-weight: var(--ds-font-weight-label);
     letter-spacing: -0.03em;
     text-transform: uppercase;
 }
 
 .culture-section__heading {
-    background: linear-gradient(90deg, #ffffff 15%, #ffe0ec 58%, #ffc7d9 100%);
-    background-clip: text;
-    color: var(--ds-pink-200);
-    font-family: var(--ds-font-display);
-    font-size: clamp(2.35rem, 5.4vw, 4.2rem);
-    font-weight: var(--ds-font-weight-heading);
-    letter-spacing: -0.065em;
-    line-height: 1;
     margin-top: clamp(1.7rem, 3.2vw, 3.2rem);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .culture-section__cards {
     display: grid;
     gap: clamp(1rem, 3vw, 2.8rem);
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-inline: auto;
     margin-top: clamp(3rem, 7vw, 6.6rem);
+    max-width: 1037px;
 }
 
 .culture-card {
@@ -160,7 +152,6 @@
     }
 
     .culture-section__heading {
-        font-size: clamp(1.9rem, 8.7vw, 2.75rem);
         margin-top: 1rem;
     }
 

@@ -63,7 +63,7 @@ export default function CultureSection() {
             <div className="culture-section__inner ds-container">
                 <div className="culture-section__intro">
                     <p className="culture-section__eyebrow">What we do</p>
-                    <h2 className="culture-section__heading" id="culture-heading">Community, Culture &amp; Careers</h2>
+                    <h2 className="ui-section-heading culture-section__heading" id="culture-heading">Community, Culture &amp; Careers</h2>
                 </div>
 
                 <div className="culture-section__cards">
