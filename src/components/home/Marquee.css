@@ -1,0 +1,70 @@
+/* Sponsor Marquee*/
+.sponsors-row {
+    /* background: var(--blush-light);
+    border-top: 1px solid rgba(240, 168, 192, 0.2);
+    border-bottom: 1px solid rgba(240, 168, 192, 0.2);
+    */padding: 28px 0;
+    overflow: hidden;
+}
+
+.sponsors-kicker {
+    text-align: center;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+
+}
+
+.marquee-track {
+    display: flex;
+    gap: 48px;
+    width: max-content;
+    animation: marquee 22s linear infinite;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+.sponsor-pill {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px 24px;
+    border: 1px solid rgba(240, 168, 192, 0.3);
+    border-radius: 40px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-soft);
+    white-space: nowrap;
+    letter-spacing: 0.03em;
+}
+
+@keyframes scrollPulse {
+
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: scaleY(0.7);
+        transform-origin: top;
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+}
+
+/* Sponsor Marquee*/
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}

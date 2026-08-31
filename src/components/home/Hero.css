@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/*Hero Section!*/
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding-top: 50px;
+}
+
+.hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    padding: 0 24px;
+    max-width: 740px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 120px;
+}
+
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.25rem;
+    font-weight: 300;
+    /*letter-spacing: 0.14em;*/
+    text-transform: uppercase;
+    /*TODO: might need to change */
+    color: white;
+    /*background: rgba(252, 232, 248, 0.88);*/
+    border: 1px solid white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    transform: translateY(16px);
+    animation: rise 0.7s 0.2s ease forwards;
+}
+
+.hero-title {
+    font-family: 'Momo Trust Sans', serif;
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 550;
+    width: fit-content;
+    white-space: nowrap;
+    line-height: 1;
+    /*color: var(--plum);*/
+    background: linear-gradient(to right, #D5AEFF, #F29CB7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 45px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: rise 0.8s 0.4s ease forwards;
+}
+
+.hero-title em {
+    font-style: italic;
+    color: var(--pink);
+}
+
+.hero-sub {
+    font-family: 'Inter', serif;
+    font-size: clamp(0.95rem, 2.5vw, 1.5rem);
+    line-height: 1.75;
+    color: white;
+    font-weight: 300;
+    /*letter-spacing: 0.18em;*/
+    /*text-transform: uppercase;*/
+    margin: 0 auto 36px;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: rise 0.8s 0.6s ease forwards;
+}
+
+.hero-sentence {
+    text-align: right;
+    font-family: 'Momo Trust Sans', serif;
+    font-size: clamp(0.95rem, 2.5vw, 1.5rem);
+    line-height: 1.75;
+    background: linear-gradient(to right, #FFFFFF, #8BE8CB);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 400;
+    margin-top: 200px; /* until animation/gif is added */
+    margin-bottom: 50px; 
+    opacity: 0;
+    transform: translateY(16px);
+    animation: rise 0.8s 0.6s ease forwards;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: rise 0.8s 0.8s ease forwards;
+}
+
+.hero-socials {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+    width: 100%;
+    justify-content: center;
+}
+
+/*Stats - Use Prospectus*/
+.stats-strip {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+    padding: 80px 24px 80px;
+    margin-top: 30px;
+    padding-left: 55px;
+    opacity: 0;
+    background: #E6F3FF;
+    animation: rise 0.8s 1s ease forwards;
+}
+
+.stat {
+    text-align: center;
+    padding: 0 32px;
+    position: relative;
+}
+
+.stat+.stat::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 15%;
+    bottom: 15%;
+    width: 1px;
+    background: #5E3E67;
+}
+
+.stat-num {
+    font-family: 'Momo Trust Sans', serif;
+    font-size: clamp(0.95rem, 2.5vw, 2rem);
+    font-weight: 400;
+    color: #5E3E67;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: clamp(0.95rem, 2.5vw, 2rem);
+    font-weight: 100;
+    color: #5E3E67;
+    /*letter-spacing: 0.08em;*/
+    /*text-transform: uppercase;*/
+    margin-top: 27px;
+
+}
+
+/* Animate stat numbers */
+@property --number {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: true;
+}
+
+@keyframes countup {
+    to { --number: var(--target);
+    }
+}
+
+.count {
+    counter-reset: count var(--number);
+    animation: countup 3s linear forwards;
+}
+
+.count::after {
+    content: counter(count) "+";
+}
+
+/* Animations */
+@keyframes rise {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
