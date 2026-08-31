@@ -21,7 +21,7 @@
 }
 
 .culture-section__heading {
-    margin-top: clamp(1.7rem, 3.2vw, 3.2rem);
+    margin-top: clamp(1.15rem, 2vw, 1.8rem);
 }
 
 .culture-section__cards {
@@ -29,17 +29,17 @@
     gap: clamp(1rem, 3vw, 2.8rem);
     grid-template-columns: repeat(3, minmax(0, 1fr));
     margin-inline: auto;
-    margin-top: clamp(3rem, 7vw, 6.6rem);
+    margin-top: clamp(2.5rem, 4.8vw, 3.8rem);
     max-width: 1037px;
 }
 
 .culture-card {
     appearance: none;
+    aspect-ratio: 348 / 340;
     background: transparent;
     border: 0;
     color: inherit;
     cursor: pointer;
-    min-block-size: clamp(23rem, 31vw, 28.5rem);
     padding: 0;
     perspective: 75rem;
     position: relative;
@@ -65,29 +65,29 @@
     height: 100%;
     inset: 0;
     justify-items: center;
-    padding: clamp(1.7rem, 3vw, 2.8rem);
+    padding: clamp(1.3rem, 2vw, 1.8rem);
     position: absolute;
     transform: rotateY(0deg);
     width: 100%;
 }
 
 .culture-card__face--back {
-    gap: clamp(0.85rem, 1.5vw, 1.3rem);
+    gap: clamp(0.55rem, 1vw, 0.9rem);
     grid-template-rows: auto auto 1fr;
     transform: rotateY(180deg);
 }
 
 .culture-card__icon {
-    height: clamp(4.5rem, 7.4vw, 6.7rem);
+    height: clamp(3.75rem, 5.6vw, 5rem);
     object-fit: contain;
-    width: clamp(4.5rem, 7.4vw, 6.7rem);
+    width: clamp(3.75rem, 5.6vw, 5rem);
 }
 
 .culture-card__title {
     color: var(--ds-pink-200);
     font-family: var(--ds-font-display);
-    font-size: clamp(1.45rem, 2.45vw, 2.1rem);
-    font-weight: var(--ds-font-weight-heading);
+    font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+    font-weight: var(--ds-font-weight-medium);
     letter-spacing: -0.055em;
     line-height: 1.04;
 }
@@ -102,11 +102,7 @@
 
 .culture-card__description {
     align-self: start;
-    color: rgba(255, 255, 255, 0.94);
-    font-size: clamp(0.95rem, 1.52vw, 1.2rem);
-    font-weight: var(--ds-font-weight-regular);
-    line-height: 1.25;
-    max-width: 18rem;
+    max-width: 17rem;
 }
 
 .culture-card__sr-only {
@@ -157,11 +153,12 @@
 
     .culture-section__cards {
         gap: 0.5rem;
-        margin-top: clamp(2.5rem, 9vw, 3.5rem);
+        margin-top: clamp(1.6rem, 6vw, 2.25rem);
     }
 
     .culture-card {
         cursor: default;
+        aspect-ratio: auto;
         min-block-size: clamp(17rem, 70vw, 22rem);
     }
 

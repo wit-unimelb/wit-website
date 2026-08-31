@@ -77,6 +77,13 @@
     line-height: 1.35;
 }
 
+.ui-section-copy {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(0.92rem, 1.3vw, 1.05rem);
+    font-weight: var(--ds-font-weight-label);
+    line-height: 1.35;
+}
+
 .ui-glass-panel {
     backdrop-filter: blur(1.5rem);
     background: var(--ds-surface-glass);

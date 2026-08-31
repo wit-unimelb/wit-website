@@ -31,7 +31,7 @@ export default function JoinCTA() {
 
             <div className="join-cta__content">
                 <h2 className="ui-section-heading join-cta__heading" id="join-cta-heading">Ready to get involved?</h2>
-                <p>
+                <p className="ui-section-copy">
                     Membership is free and open to everyone at the University of Melbourne —
                     regardless of degree or experience level.
                 </p>

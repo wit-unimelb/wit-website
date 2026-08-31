@@ -47,7 +47,7 @@ function CultureCard({ description, icon, title }: CultureCardProps) {
                 <GlassPanel aria-hidden="true" className="culture-card__face culture-card__face--back" strength="strong">
                     <img alt="" className="culture-card__icon" src={assetUrl(icon)} />
                     <span className="culture-card__title">{title}</span>
-                    <span className="culture-card__description">{description}</span>
+                    <span className="culture-card__description ui-section-copy">{description}</span>
                 </GlassPanel>
             </span>
             <span className="culture-card__sr-only" id={`culture-card-description-${title.toLowerCase().replaceAll(' ', '-')}`}>

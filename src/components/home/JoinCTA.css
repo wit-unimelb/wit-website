@@ -103,9 +103,6 @@
 
 .join-cta p {
     box-sizing: border-box;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: clamp(0.92rem, 1.3vw, 1.05rem);
-    line-height: 1.35;
     margin: 1.35rem auto 1.8rem;
     padding-inline: var(--join-cta-body-padding);
     width: min(calc(100% - 4rem), var(--join-cta-center-image-width));
