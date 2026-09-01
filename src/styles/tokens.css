@@ -1,0 +1,55 @@
+:root {
+    --ds-ink: #ffffff;
+    --ds-ink-muted: rgba(255, 255, 255, 0.76);
+    --ds-plum-950: #25113a;
+    --ds-plum-800: #4d2e66;
+    --ds-plum-700: #5e3e67;
+    --ds-lilac-200: #d8ddff;
+    --ds-lilac-100: #eef1ff;
+    --ds-pink-300: #ffc7d9;
+    --ds-pink-200: #ffe0ec;
+    --ds-cream: #fff8ee;
+    --ds-glass: rgba(255, 238, 253, 0.12);
+    --ds-glass-border: rgba(255, 238, 253, 0.28);
+    --ds-shadow: 0 24px 80px rgba(31, 14, 60, 0.22);
+
+    /* Shared aurora canvas */
+    --ds-aurora-deep: #301047;
+    --ds-aurora-mauve: #6c4b7d;
+    --ds-aurora-sky: #5e79b4;
+    --ds-aurora-night: #493467;
+    --ds-aurora-rose-glow: rgba(255, 184, 212, 0.44);
+    --ds-aurora-blue-glow: rgba(116, 138, 243, 0.5);
+
+    /* Reusable surfaces and actions */
+    --ds-surface-glass: rgba(255, 238, 253, 0.12);
+    --ds-surface-glass-strong: rgba(255, 248, 253, 0.2);
+    --ds-surface-input: rgba(43, 71, 119, 0.56);
+    --ds-border-glass: rgba(255, 238, 253, 0.28);
+    --ds-action-start: #d5aeff;
+    --ds-action-end: #f29cb7;
+    --ds-action-text: #102b54;
+
+    --ds-font-sans: "Momo Trust Sans", "DM Sans", Arial, sans-serif;
+    --ds-font-display: "Momo Trust Sans", "DM Sans", Arial, sans-serif;
+    --ds-font-weight-regular: 400;
+    --ds-font-weight-label: 350;
+    --ds-font-weight-medium: 500;
+    --ds-font-weight-heading: 550;
+
+    --ds-space-1: 0.5rem;
+    --ds-space-2: 0.75rem;
+    --ds-space-3: 1rem;
+    --ds-space-4: 1.5rem;
+    --ds-space-5: 2rem;
+    --ds-space-6: 3rem;
+    --ds-space-7: 4.5rem;
+    --ds-space-8: 6rem;
+    --ds-space-9: 8rem;
+
+    --ds-radius-sm: 0.75rem;
+    --ds-radius-md: 1.25rem;
+    --ds-radius-lg: 2rem;
+    --ds-radius-pill: 999px;
+    --ds-container: 75rem;
+}

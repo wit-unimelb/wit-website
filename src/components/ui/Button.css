@@ -1,0 +1,70 @@
+.ds-button {
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: var(--ds-radius-pill);
+    display: inline-flex;
+    font-family: var(--ds-font-sans);
+    font-size: 0.875rem;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1;
+    min-height: 2.75rem;
+    padding: 0.875rem 1.4rem;
+    text-decoration: none;
+    transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+.ds-button:hover {
+    transform: translateY(-2px);
+}
+
+.ds-button:focus-visible {
+    outline: 3px solid var(--ds-pink-300);
+    outline-offset: 3px;
+}
+
+.ds-button--light {
+    background: var(--ds-lilac-200);
+    color: #3f2471;
+}
+
+.ds-button--light:hover {
+    background: #ffffff;
+}
+
+.ds-button--gradient {
+    background: linear-gradient(90deg, var(--ds-action-start), var(--ds-action-end));
+    box-shadow: 0 0.45rem 1rem rgba(47, 26, 76, 0.24);
+    color: var(--ds-action-text);
+}
+
+.ds-button--gradient:hover {
+    background: linear-gradient(90deg, #e0c1ff, #ffacd0);
+}
+
+.ds-button--join {
+    background: var(--ds-lilac-200);
+    color: #3f2471;
+}
+
+.ds-button--join:hover {
+    background: #ffffff;
+}
+
+.ds-button--outline {
+    border-color: rgba(255, 255, 255, 0.62);
+    color: #ffffff;
+}
+
+.ds-button--outline:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.ds-button--ghost {
+    border-color: rgba(255, 255, 255, 0.52);
+    color: var(--ds-ink);
+}
+
+.ds-button--ghost:hover {
+    background: rgba(255, 255, 255, 0.12);
+}

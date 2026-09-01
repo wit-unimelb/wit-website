@@ -1,0 +1,96 @@
+#root {
+    min-height: 100%;
+}
+
+html {
+    font-size: 15px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html body {
+    background:
+        radial-gradient(circle at 88% 7%, var(--ds-aurora-rose-glow), transparent 25rem),
+        radial-gradient(circle at 7% 34%, var(--ds-aurora-blue-glow), transparent 31rem),
+        linear-gradient(to bottom, var(--ds-aurora-deep) 0%, var(--ds-aurora-mauve) 43%, var(--ds-aurora-sky) 72%, var(--ds-aurora-night) 100%);
+    color: var(--ds-ink);
+    font-family: var(--ds-font-sans);
+}
+
+.site-shell {
+    background:
+        radial-gradient(circle at 78% 16%, rgba(255, 207, 224, 0.2), transparent 20rem),
+        radial-gradient(circle at 18% 66%, rgba(157, 180, 255, 0.15), transparent 27rem),
+        linear-gradient(to bottom, var(--ds-aurora-deep) 0%, var(--ds-aurora-mauve) 43%, var(--ds-aurora-sky) 72%, var(--ds-aurora-night) 100%);
+    isolation: isolate;
+    min-height: 100vh;
+    position: relative;
+}
+
+.site-shell::before {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.28) 0.7px, transparent 0.7px);
+    background-size: 0.62rem 0.62rem;
+    content: '';
+    inset: 0;
+    opacity: 0.16;
+    pointer-events: none;
+    position: fixed;
+    z-index: -1;
+}
+
+.site-main {
+    min-height: 100vh;
+    position: relative;
+}
+
+.site-main::after {
+    background: url('/footer-data-grid.png') center bottom / min(100%, 80rem) auto repeat-x;
+    bottom: 0;
+    content: '';
+    height: min(68.75vw, 55rem);
+    inset-inline: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+}
+
+.site-main > * {
+    position: relative;
+    z-index: 1;
+}
+
+.page-canvas {
+    min-height: 100svh;
+}
+
+.ds-container {
+    width: min(calc(100% - 3rem), var(--ds-container));
+    margin-inline: auto;
+}
+
+.new-site-page {
+    color: var(--ds-ink);
+    font-family: var(--ds-font-sans);
+    overflow: clip;
+}
+
+.new-site-page a {
+    color: inherit;
+}
+
+/* Shared lower-page accent from the supplied Figma designs. */
+.ui-data-grid {
+    background: url('/footer-data-grid.png') center bottom / min(100%, 80rem) auto repeat-x;
+    height: min(68.75vw, 55rem);
+    pointer-events: none;
+}
+
+@media (max-width: 40rem) {
+    .ds-container {
+        width: min(calc(100% - 2rem), var(--ds-container));
+    }
+}

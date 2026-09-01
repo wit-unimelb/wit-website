@@ -1,0 +1,109 @@
+nav.site-header {
+    align-items: center;
+    backdrop-filter: blur(18px);
+    background: linear-gradient(180deg, rgba(36, 15, 51, 0.58), rgba(36, 15, 51, 0));
+    border-bottom: 1px solid transparent;
+    display: flex;
+    height: 4.25rem;
+    justify-content: space-between;
+    left: 0;
+    padding: 0 3.5rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.site-header--home {
+    background: linear-gradient(180deg, rgba(35, 17, 57, 0.48), rgba(35, 17, 57, 0.08));
+}
+
+.site-header__brand {
+    background: linear-gradient(90deg, var(--ds-action-start), var(--ds-action-end));
+    background-clip: text;
+    color: var(--ds-pink-300);
+    font-family: var(--ds-font-sans);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.07em;
+    text-decoration: none;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.site-header__links {
+    align-items: center;
+    display: flex;
+    gap: 0.4rem;
+}
+
+.site-header__link {
+    border-radius: var(--ds-radius-pill);
+    color: rgba(255, 255, 255, 0.9);
+    font-family: var(--ds-font-sans);
+    font-size: 0.875rem;
+    padding: 0.55rem 0.75rem;
+    text-decoration: none;
+    transition: background-color 160ms ease, color 160ms ease;
+}
+
+.site-header .ds-button {
+    min-height: 2.2rem;
+    padding: 0.65rem 1.3rem;
+}
+
+.site-header__link:hover,
+.site-header__link[aria-current='page'] {
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+}
+
+.site-header__menu-button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    display: none;
+    padding: 0.4rem;
+}
+
+.site-header__menu-button span {
+    background: #ffffff;
+    display: block;
+    height: 2px;
+    margin: 4px 0;
+    width: 1.4rem;
+}
+
+@media (max-width: 48rem) {
+    nav.site-header {
+        height: 4rem;
+        padding: 0 1.25rem;
+    }
+
+    .site-header__menu-button {
+        display: block;
+    }
+
+    .site-header__links {
+        align-items: stretch;
+        background: rgba(48, 21, 73, 0.98);
+        border-bottom: 1px solid rgba(255, 238, 253, 0.2);
+        display: none;
+        flex-direction: column;
+        gap: 0.25rem;
+        left: 0;
+        padding: 1rem 1.25rem 1.25rem;
+        position: absolute;
+        right: 0;
+        top: 100%;
+    }
+
+    .site-header__links--open {
+        display: flex;
+    }
+
+    .site-header__link,
+    .site-header__links .ds-button {
+        text-align: center;
+    }
+}
