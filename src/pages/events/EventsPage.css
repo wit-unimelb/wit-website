@@ -1,0 +1,120 @@
+.events-page {
+    min-height: 100svh;
+}
+
+.events-hero {
+    padding-bottom: clamp(2.5rem, 5vw, 4rem);
+    text-align: center;
+}
+
+.events-hero__page-hero .ui-page-hero__lead {
+    font-weight: var(--ds-font-weight-label);
+    margin-top: calc(var(--ds-space-3) + 0.2rem);
+}
+
+.events-hero__introduction {
+    margin: var(--ds-space-3) auto 0;
+    max-width: 44rem;
+}
+
+.events-category-carousel {
+    background: #ADA1CC;
+    border-block: 1px solid #c5bbdf;
+    overflow: hidden;
+    position: relative;
+}
+
+.events-category-carousel::before,
+.events-category-carousel::after {
+    content: '';
+    inset-block: 0;
+    pointer-events: none;
+    position: absolute;
+    width: clamp(1.25rem, 5vw, 4rem);
+    z-index: 1;
+}
+
+.events-category-carousel::before {
+    background: linear-gradient(90deg, #ADA1CC, transparent);
+    left: 0;
+}
+
+.events-category-carousel::after {
+    background: linear-gradient(270deg, #ADA1CC, transparent);
+    right: 0;
+}
+
+.events-category-carousel__viewport {
+    overflow: hidden;
+}
+
+.events-category-carousel__track {
+    animation: events-category-carousel-scroll 25s linear infinite;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: max-content;
+}
+
+.events-category-carousel:hover .events-category-carousel__track {
+    animation-play-state: paused;
+}
+
+.events-category-carousel__item {
+    align-items: center;
+    color: rgba(255, 255, 255, 0.94);
+    display: flex;
+    flex: 0 0 max(9rem, 20vw);
+    font-size: clamp(0.85rem, 1.45vw, 1.08rem);
+    font-weight: var(--ds-font-weight-regular);
+    justify-content: center;
+    letter-spacing: -0.025em;
+    min-height: 3.25rem;
+    padding: var(--ds-space-2) var(--ds-space-3);
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+@keyframes events-category-carousel-scroll {
+    to {
+        transform: translateX(-33.333333%);
+    }
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .events-hero__introduction {
+        background: linear-gradient(105deg, #ffffff 7%, #8BE8CB 100%);
+        background-clip: text;
+        color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+@media (max-width: 40rem) {
+    .events-hero {
+        padding-bottom: var(--ds-space-7);
+    }
+
+    .events-hero__introduction {
+        line-height: 1.32;
+        max-width: 25rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .events-category-carousel__track {
+        animation: none;
+    }
+}
+
+@media (forced-colors: active) {
+    .events-hero__page-hero .ui-page-hero__title,
+    .events-hero__introduction {
+        background: none;
+        color: CanvasText;
+        -webkit-text-fill-color: currentColor;
+    }
+}
