@@ -1,4 +1,5 @@
 import PageHero from '@/components/ui/PageHero'
+import EventsExplorer from '@/components/events/EventsExplorer'
 import './EventsPage.css'
 
 const eventCategories = ['Workshops', 'Networking', 'Social Events', 'Competitions', 'Other']
@@ -35,6 +36,8 @@ export default function EventsPage() {
                     </ul>
                 </div>
             </section>
+
+            <EventsExplorer />
         </article>
     )
 }
