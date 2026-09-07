@@ -25,8 +25,8 @@
     position: relative;
     z-index: 2;
     text-align: left;
-    padding: 0 24px;
-    max-width: 740px;
+    padding: 0 50px;
+    max-width: 1000px;
     width: 100%;
     margin: 0 auto;
     margin-top: 120px;
@@ -48,9 +48,7 @@
     border-radius: 20px;
     margin-bottom: 50px;
     backdrop-filter: blur(8px);
-    opacity: 0;
     transform: translateY(16px);
-    animation: rise 0.7s 0.2s ease forwards;
 }
 
 .hero-title {
@@ -66,8 +64,8 @@
     -webkit-text-fill-color: transparent;
     margin-bottom: 45px;
     opacity: 0;
-    transform: translateY(20px);
-    animation: rise 0.8s 0.4s ease forwards;
+    transform: translateY(-20px);
+    animation: drop 0.5s 0.2s forwards;
 }
 
 .hero-title em {
@@ -77,52 +75,26 @@
 
 .hero-sub {
     font-family: 'Inter', serif;
-    font-size: clamp(0.95rem, 2.5vw, 1.5rem);
+    font-size: clamp(0.95rem, 2.5vw, 1.75rem);
     line-height: 1.75;
     color: white;
     font-weight: 300;
-    /*letter-spacing: 0.18em;*/
-    /*text-transform: uppercase;*/
-    margin: 0 auto 36px;
-    opacity: 0;
+    margin: 0 auto 0px;
     transform: translateY(16px);
-    animation: rise 0.8s 0.6s ease forwards;
 }
 
 .hero-sentence {
     text-align: right;
     font-family: 'Momo Trust Sans', serif;
-    font-size: clamp(0.95rem, 2.5vw, 1.5rem);
+    font-size: clamp(0.95rem, 2.5vw, 1.75rem);
     line-height: 1.75;
     background: linear-gradient(to right, #FFFFFF, #8BE8CB);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 400;
-    margin-top: 200px; /* until animation/gif is added */
+    margin-top: 100px; 
     margin-bottom: 50px; 
-    opacity: 0;
     transform: translateY(16px);
-    animation: rise 0.8s 0.6s ease forwards;
-}
-
-.hero-actions {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    opacity: 0;
-    transform: translateY(14px);
-    animation: rise 0.8s 0.8s ease forwards;
-}
-
-.hero-socials {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-top: 8px;
-    width: 100%;
-    justify-content: center;
 }
 
 /*Stats - Use Prospectus*/
@@ -132,29 +104,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0;
     width: 100%;
     padding: 80px 24px 80px;
-    margin-top: 30px;
     padding-left: 55px;
-    opacity: 0;
     background: #E6F3FF;
-    animation: rise 0.8s 1s ease forwards;
 }
 
 .stat {
-    text-align: center;
-    padding: 0 32px;
     position: relative;
+    flex: 1;
+    text-align: center;
+    padding: 0 1.5rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
 }
 
 .stat+.stat::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 15%;
-    bottom: 15%;
-    width: 1px;
+    top:-10%;
+    bottom: -10%;
+    width: 2px;
     background: #5E3E67;
 }
 
@@ -164,14 +136,13 @@
     font-weight: 400;
     color: #5E3E67;
     line-height: 1;
+    width: 100%;
 }
 
 .stat-label {
     font-size: clamp(0.95rem, 2.5vw, 2rem);
     font-weight: 100;
     color: #5E3E67;
-    /*letter-spacing: 0.08em;*/
-    /*text-transform: uppercase;*/
     margin-top: 27px;
 
 }
@@ -188,8 +159,19 @@
     }
 }
 
+/* Animations for stats when scrolled down */
+.stats-strip.show .stat {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .count {
     counter-reset: count var(--number);
+    opacity: 0;
+}
+
+.stats-strip.show .count {
+    opacity: 1;
     animation: countup 3s linear forwards;
 }
 
@@ -197,10 +179,120 @@
     content: counter(count) "+";
 }
 
-/* Animations */
+
+/* Animations for text */
 @keyframes rise {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes drop {
+    to {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+}
+
+/* Hero image animation */
+.line1, .line2, .line3, .line4, .line5, .line6 {
+    stroke: white;
+    stroke-width: 1;
+    animation: growLine 0.75s ease forwards;
+}
+
+.line1 {
+    stroke-dasharray: 185;
+    stroke-dashoffset: 185;
+    animation-delay: 0.5s;
+}
+
+.line2 {
+    stroke-dasharray: 185;
+    stroke-dashoffset: 185;
+    animation-delay: 1.5s;
+}
+
+.line3 {
+    stroke-dasharray: 310;
+    stroke-dashoffset: 310;
+    animation-delay: 2.25s;
+}
+
+.line4 {
+    stroke-dasharray: 185;
+    stroke-dashoffset: 185;
+    animation-delay: 3s;
+}
+
+.line5 {
+    stroke-dasharray: 185;
+    stroke-dashoffset: 185;
+    animation-delay: 3.75s;
+}
+
+.line6 {
+    stroke-dasharray: 185;
+    stroke-dashoffset: 185;
+    animation-delay: 4.5s;
+}
+
+@keyframes growLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.dot1 {
+    fill: #8BE8CB;
+    opacity: 0;
+    filter: blur(8px);
+    animation: appear 0.5s ease forwards;
+}
+
+.dot2 {
+    fill: #F29CB7;
+    opacity: 0;
+    filter: blur(8px);
+    animation: appear 0.5s ease forwards;
+    animation-delay: 1.5s;
+}
+
+.dot3 {
+    fill: #FBD050;
+    opacity: 0;
+    filter: blur(8px);
+    animation: appear 0.5s ease forwards;
+    animation-delay: 2.25s;
+}
+
+.dot4 {
+    fill: #7DA0C0;
+    opacity: 0;
+    filter: blur(8px);
+    animation: appear 0.5s ease forwards;
+    animation-delay: 3.75s;
+}
+
+.dot5 {
+    fill: #D9D9D9;
+    opacity: 0;
+    filter: blur(8px);
+    animation: appear 0.5s ease forwards;
+    animation-delay: 4.5s;
+}
+
+.dot6 {
+    fill: #FFD166;
+    opacity: 0;
+    filter: blur(8px);
+    animation: appear 0.5s ease forwards;
+    animation-delay: 5.25s;
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
     }
 }
