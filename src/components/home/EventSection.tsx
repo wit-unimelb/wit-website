@@ -62,7 +62,7 @@ const upcomingEvents: WitEvent[] = humanitixData.events
         name: event.name || 'Untitled Event',
         date: event.startDate || '',
         caption: event.sharingDescription || '',
-        image: event.bannerImage?.url || "../../../public/og,.png", //TODO: replace with a proper placeholder image
+        image: event.bannerImage?.url || "/og.png", //TODO: replace with a proper placeholder image
         humanitixUrl: event.url || 'https://events.humanitix.com/host/women-in-technology',
         location: event.eventLocation.address || '',
         format: HUMANITIX_CATEGORY_MAP[event.classification.type] || 'Other',
@@ -109,7 +109,7 @@ export default function EventSection() {
               aria-label="Previous event"
               onClick={goBack}
             >
-              <img src="../../../public/back-arrow.png" alt="Previous event" />
+              <img src="/back-arrow.png" alt="Previous event" />
             </button>}
 
             <div className="event-card__media" key={`media-${currEventIndex}`}>
@@ -122,7 +122,7 @@ export default function EventSection() {
               aria-label="Next event"
               onClick={goForward}
             >
-              <img src="../../../public/next-arrow.png" alt="Next event" />
+              <img src="/next-arrow.png" alt="Next event" />
             </button>}
 
             <div className="event-card__spacer" aria-hidden="true" />
