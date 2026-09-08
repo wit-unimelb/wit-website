@@ -1,0 +1,72 @@
+@import '/src/styles/tokens.css';
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/* Sponsor Marquee*/
+.sponsors-row {
+    background-color: #E6F3FF40;
+    padding: 40px 24px 40px;
+    overflow: hidden;
+}
+
+.sponsors-kicker {
+    text-align: center;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    font-weight: var(--ds-font-weight-label);
+    font-family: 'Inter', serif;
+    text-transform: uppercase;
+    color: var(--ds-plum-700);
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 22s linear infinite;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.marquee-group {
+    display: flex;
+    gap: 8vw;
+    padding-right: 8vw;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.marquee-group img {
+    height: clamp(50px, 15vw, 120px);
+    width:  250px;
+    object-fit: contain;
+    display: block;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollPulse {
+
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: scaleY(0.7);
+        transform-origin: top;
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+}
+
+/* Sponsor Marquee*/
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
