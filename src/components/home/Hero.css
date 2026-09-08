@@ -1,3 +1,4 @@
+@import '/src/styles/tokens.css';
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 /*Hero Section!*/
@@ -37,12 +38,10 @@
     align-items: center;
     gap: 8px;
     font-size: 1.25rem;
-    font-weight: 300;
-    /*letter-spacing: 0.14em;*/
+    font-weight: var(--ds-font-weight-label);
     text-transform: uppercase;
     /*TODO: might need to change */
     color: white;
-    /*background: rgba(252, 232, 248, 0.88);*/
     border: 1px solid white;
     padding: 6px 16px;
     border-radius: 20px;
@@ -52,14 +51,13 @@
 }
 
 .hero-title {
-    font-family: 'Momo Trust Sans', serif;
+    font-family: var(--ds-font-sans);
     font-size: clamp(3rem, 10vw, 6rem);
-    font-weight: 550;
+    font-weight: var(--ds-font-weight-heading);
     width: fit-content;
     white-space: nowrap;
     line-height: 1;
-    /*color: var(--plum);*/
-    background: linear-gradient(to right, #D5AEFF, #F29CB7);
+    background: linear-gradient(to right, var(--ds-action-start), var(--ds-action-end));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 45px;
@@ -68,30 +66,25 @@
     animation: drop 0.5s 0.2s forwards;
 }
 
-.hero-title em {
-    font-style: italic;
-    color: var(--pink);
-}
-
 .hero-sub {
     font-family: 'Inter', serif;
     font-size: clamp(0.95rem, 2.5vw, 1.75rem);
     line-height: 1.75;
     color: white;
-    font-weight: 300;
+    font-weight: var(--ds-font-weight-label);
     margin: 0 auto 0px;
     transform: translateY(16px);
 }
 
 .hero-sentence {
     text-align: right;
-    font-family: 'Momo Trust Sans', serif;
+    font-family: var(--ds-font-sans);
     font-size: clamp(0.95rem, 2.5vw, 1.75rem);
     line-height: 1.75;
     background: linear-gradient(to right, #FFFFFF, #8BE8CB);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: 400;
+    font-weight: var(--ds-font-weight-regular);
     margin-top: 100px; 
     margin-bottom: 50px; 
     transform: translateY(16px);
@@ -103,7 +96,7 @@
     z-index: 2;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     width: 100%;
     padding: 80px 24px 80px;
     padding-left: 55px;
@@ -124,17 +117,17 @@
     content: '';
     position: absolute;
     left: 0;
-    top:-10%;
+    top: -10%;
     bottom: -10%;
     width: 2px;
-    background: #5E3E67;
+    background: var(--ds-plum-700);
 }
 
 .stat-num {
-    font-family: 'Momo Trust Sans', serif;
+    font-family: var(--ds-font-sans);
     font-size: clamp(0.95rem, 2.5vw, 2rem);
-    font-weight: 400;
-    color: #5E3E67;
+    font-weight: var(--ds-font-weight-regular);
+    color: var(--ds-plum-700);
     line-height: 1;
     width: 100%;
 }
@@ -142,7 +135,7 @@
 .stat-label {
     font-size: clamp(0.95rem, 2.5vw, 2rem);
     font-weight: 100;
-    color: #5E3E67;
+    color: var(--ds-plum-700);
     margin-top: 27px;
 
 }

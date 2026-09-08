@@ -4,8 +4,6 @@
 /* Sponsor Marquee*/
 .sponsors-row {
     background-color: #E6F3FF40;
-    border-top: 1px solid rgba(240, 168, 192, 0.2);
-    border-bottom: 1px solid rgba(240, 168, 192, 0.2);
     padding: 40px 24px 40px;
     overflow: hidden;
 }
@@ -13,7 +11,7 @@
 .sponsors-kicker {
     text-align: center;
     font-size: clamp(1rem, 1.5vw, 1.5rem);
-    font-weight: 350;
+    font-weight: var(--ds-font-weight-label);
     font-family: 'Inter', serif;
     text-transform: uppercase;
     color: var(--ds-plum-700);
@@ -21,15 +19,23 @@
 
 .marquee-track {
     display: flex;
-    gap: 8vw;
     width: max-content;
     animation: marquee 22s linear infinite;
     align-items: center;
+    flex-shrink: 0;
 }
 
-.marquee-track img {
-    height: 8vw;
-    max-width: auto;
+.marquee-group {
+    display: flex;
+    gap: 8vw;
+    padding-right: 8vw;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.marquee-group img {
+    height: clamp(50px, 15vw, 120px);
+    width:  250px;
     object-fit: contain;
     display: block;
 }
@@ -37,20 +43,6 @@
 .marquee-track:hover {
     animation-play-state: paused;
 }
-
-/*.sponsor-pill {
-    display: inline-flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.7);
-    padding: 10px 24px;
-    border: 1px solid rgba(240, 168, 192, 0.3);
-    border-radius: 40px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--text-soft);
-    white-space: nowrap;
-    letter-spacing: 0.03em;
-}*/
 
 @keyframes scrollPulse {
 

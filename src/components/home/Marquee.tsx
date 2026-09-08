@@ -25,13 +25,25 @@ export default function Marquee() {
              <p className="sponsors-kicker">OUR SPONSORS</p>
             <div style={{ overflow: 'hidden', padding: '20px 40px' }}>
                 <div className="marquee-track">
-                    {[...sponsors, ...sponsors].map((sponsor, i) => (
-                        <img 
-                        key={`${sponsor.name}-${i}`}
-                        src={sponsor.logo}
-                        alt={ `${sponsor.name}`}
-                        />
-                    ))}
+                    <div className="marquee-group">
+                        {sponsors.map((sponsor, i) => (
+                            <img 
+                            key={`${sponsor.name}-${i}`}
+                            src={sponsor.logo}
+                            alt={ `${sponsor.name}`}
+                            />
+                        ))}
+                    </div>  
+
+                    <div className="marquee-group">
+                        {sponsors.map((sponsor, i) => (
+                            <img 
+                            key={`${sponsor.name}-${i}`}
+                            src={sponsor.logo}
+                            alt={ `${sponsor.name}`}
+                            />
+                        ))}
+                    </div>   
                 </div>
             </div>
         </div>
