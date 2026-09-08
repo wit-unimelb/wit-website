@@ -22,7 +22,7 @@
 }
 
 .event-section__heading::before {
-  background: url("/star.png") center / contain no-repeat;
+  background: var(--event-section-star-image) center / contain no-repeat;
   content: "";
   height: clamp(8rem, 18vw, 15rem);
   left: 50%;

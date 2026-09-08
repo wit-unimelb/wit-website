@@ -1,6 +1,7 @@
 import "./EventSection.css";
 import humanitixData from '../../../data/humanitix.json';
-import { useState } from "react";
+import { type CSSProperties, useState } from "react";
+import { assetUrl } from '@/assets';
 
 /* map humantix event types to internal event categories */
 const HUMANITIX_CATEGORY_MAP: Record<string, 'Workshops' | 'Networking' | 'Social Events' | 'Competitions' | 'Other'> = {
@@ -69,6 +70,10 @@ const upcomingEvents: WitEvent[] = humanitixData.events
     })).filter((event) => getEventTime(event.date) >= getTodatyTime())
       .sort((firstEvent, secondEvent) => getEventTime(firstEvent.date) - getEventTime(secondEvent.date));
 
+const eventSectionStyle = {
+  '--event-section-star-image': `url("${assetUrl('star.png')}")`,
+} as CSSProperties;
+
 export default function EventSection() {
   if (upcomingEvents.length === 0) {
     return (null);
@@ -90,7 +95,7 @@ export default function EventSection() {
   }
 
   return (
-    <section className="event-section" aria-labelledby="event-heading">
+    <section className="event-section" aria-labelledby="event-heading" style={eventSectionStyle}>
       <div className="event-section__inner ds-container">
         <div className="event-section__intro">
           <h2
@@ -109,7 +114,7 @@ export default function EventSection() {
               aria-label="Previous event"
               onClick={goBack}
             >
-              <img src="/back-arrow.png" alt="Previous event" />
+              <img src={assetUrl('back-arrow.png')} alt="Previous event" />
             </button>}
 
             <div className="event-card__media" key={`media-${currEventIndex}`}>
@@ -122,7 +127,7 @@ export default function EventSection() {
               aria-label="Next event"
               onClick={goForward}
             >
-              <img src="/next-arrow.png" alt="Next event" />
+              <img src={assetUrl('next-arrow.png')} alt="Next event" />
             </button>}
 
             <div className="event-card__spacer" aria-hidden="true" />

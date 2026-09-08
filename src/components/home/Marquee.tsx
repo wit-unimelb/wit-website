@@ -1,22 +1,23 @@
 // Replace with real sponsor names when you connect Sanity
 
+import { assetUrl } from '@/assets'
 import './Marquee.css'
 
 const sponsors = [
-    { name: 'Airwallex', logo: '../sponsor-images/airwallex.png'},
-    { name: 'Macquarie', logo: '../sponsor-images/macquarie.png'},
-    { name: 'Jane Street', logo: '../sponsor-images/janestreet.png'},
-    { name: 'Fenwick', logo: '../sponsor-images/fenwick.png'},
-    { name: 'Atlassian', logo: '../sponsor-images/atlassian.png'},
-    { name: 'Australian Super', logo: '../sponsor-images/australiansuper.png'},
-    { name: 'Susquehanna', logo: '../sponsor-images/susquehanna.png'},
-    { name: 'CBA', logo: '../sponsor-images/cba.png'},
-    { name: 'Vanguard', logo: '../sponsor-images/vanguard.png'},
-    { name: 'Optiver', logo: '../sponsor-images/optiver.png'},
-    { name: 'Accenture', logo: '../sponsor-images/accenture.png'},
-    { name: 'PWC', logo: '../sponsor-images/pwc.png'},
-    { name: 'Seek', logo: '../sponsor-images/seek.png'},
-    { name: 'EY', logo: '../sponsor-images/ey.png'},
+    { name: 'Airwallex', logo: 'airwallex.png' },
+    { name: 'Macquarie', logo: 'macquarie.png' },
+    { name: 'Jane Street', logo: 'janestreet.png' },
+    { name: 'Fenwick', logo: 'fenwick.png' },
+    { name: 'Atlassian', logo: 'atlassian.png' },
+    { name: 'Australian Super', logo: 'australiansuper.png' },
+    { name: 'Susquehanna', logo: 'susquehanna.png' },
+    { name: 'CBA', logo: 'cba.png' },
+    { name: 'Vanguard', logo: 'vanguard.png' },
+    { name: 'Optiver', logo: 'optiver.png' },
+    { name: 'Accenture', logo: 'accenture.png' },
+    { name: 'PWC', logo: 'pwc.png' },
+    { name: 'Seek', logo: 'seek.png' },
+    { name: 'EY', logo: 'ey.png' },
 ]
 
 export default function Marquee() {
@@ -29,7 +30,7 @@ export default function Marquee() {
                         {sponsors.map((sponsor, i) => (
                             <img 
                             key={`${sponsor.name}-${i}`}
-                            src={sponsor.logo}
+                            src={assetUrl(sponsor.logo)}
                             alt={ `${sponsor.name}`}
                             />
                         ))}
@@ -39,7 +40,7 @@ export default function Marquee() {
                         {sponsors.map((sponsor, i) => (
                             <img 
                             key={`${sponsor.name}-${i}`}
-                            src={sponsor.logo}
+                            src={assetUrl(sponsor.logo)}
                             alt={ `${sponsor.name}`}
                             />
                         ))}
