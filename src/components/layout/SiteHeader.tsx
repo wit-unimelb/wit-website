@@ -20,7 +20,12 @@ export default function SiteHeader() {
 
     return (
         <nav className={`site-header${isHome ? ' site-header--home' : ''}`} aria-label="Primary navigation">
-            <Link className="site-header__brand" to="/" onClick={closeMenu} aria-label="Women in Technology home">
+            <Link className="site-header__brand" to="/" onClick={() => {
+                closeMenu()
+                window.location.href = '/'
+                }} 
+                aria-label="Women in Technology home"
+                >
                 WIT
             </Link>
 

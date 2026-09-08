@@ -1,0 +1,291 @@
+@import '/src/styles/tokens.css';
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/*Hero Section!*/
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding-top: 50px;
+}
+
+.hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    padding: 0 50px;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 120px;
+}
+
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.25rem;
+    font-weight: var(--ds-font-weight-label);
+    text-transform: uppercase;
+    /*TODO: might need to change */
+    color: white;
+    border: 1px solid white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    backdrop-filter: blur(8px);
+    transform: translateY(16px);
+}
+
+.hero-title {
+    font-family: var(--ds-font-sans);
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: var(--ds-font-weight-heading);
+    width: fit-content;
+    white-space: nowrap;
+    line-height: 1;
+    background: linear-gradient(to right, var(--ds-action-start), var(--ds-action-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 45px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: drop 0.5s 0.2s forwards;
+}
+
+.hero-sub {
+    font-family: 'Inter', serif;
+    font-size: clamp(0.95rem, 2.5vw, 1.75rem);
+    line-height: 1.75;
+    color: white;
+    font-weight: var(--ds-font-weight-label);
+    margin: 0 auto 0px;
+    transform: translateY(16px);
+}
+
+.hero-sentence {
+    text-align: right;
+    font-family: var(--ds-font-sans);
+    font-size: clamp(0.95rem, 2.5vw, 1.75rem);
+    line-height: 1.75;
+    background: linear-gradient(to right, #FFFFFF, #8BE8CB);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: var(--ds-font-weight-regular);
+    margin-top: 100px; 
+    margin-bottom: 50px; 
+    transform: translateY(16px);
+}
+
+/*Stats - Use Prospectus*/
+.stats-strip {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    padding: 80px 24px 80px;
+    padding-left: 55px;
+    background: #E6F3FF;
+}
+
+.stat {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    padding: 0 1.5rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.stat+.stat::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -10%;
+    bottom: -10%;
+    width: 2px;
+    background: var(--ds-plum-700);
+}
+
+.stat-num {
+    font-family: var(--ds-font-sans);
+    font-size: clamp(0.95rem, 2.5vw, 2rem);
+    font-weight: var(--ds-font-weight-regular);
+    color: var(--ds-plum-700);
+    line-height: 1;
+    width: 100%;
+}
+
+.stat-label {
+    font-size: clamp(0.95rem, 2.5vw, 2rem);
+    font-weight: 100;
+    color: var(--ds-plum-700);
+    margin-top: 27px;
+
+}
+
+/* Animate stat numbers */
+@property --number {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: true;
+}
+
+@keyframes countup {
+    to { --number: var(--target);
+    }
+}
+
+/* Animations for stats when scrolled down */
+.stats-strip.show .stat {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.count {
+    counter-reset: count var(--number);
+    opacity: 0;
+}
+
+.stats-strip.show .count {
+    opacity: 1;
+    animation: countup 3s linear forwards;
+}
+
+.count::after {
+    content: counter(count) "+";
+}
+
+
+/* Animations for text */
+@keyframes rise {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes drop {
+    to {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+}
+
+/* Hero image animation */
+.line1, .line2, .line3, .line4, .line5, .line6 {
+    stroke: white;
+    stroke-width: 1;
+    animation: growLine 0.75s ease forwards;
+}
+
+.line1 {
+    stroke-dasharray: 185;
+    stroke-dashoffset: 185;
+    animation-delay: 0.5s;
+}
+
+.line2 {
+    stroke-dasharray: 185;
+    stroke-dashoffset: 185;
+    animation-delay: 1.5s;
+}
+
+.line3 {
+    stroke-dasharray: 310;
+    stroke-dashoffset: 310;
+    animation-delay: 2.25s;
+}
+
+.line4 {
+    stroke-dasharray: 185;
+    stroke-dashoffset: 185;
+    animation-delay: 3s;
+}
+
+.line5 {
+    stroke-dasharray: 185;
+    stroke-dashoffset: 185;
+    animation-delay: 3.75s;
+}
+
+.line6 {
+    stroke-dasharray: 185;
+    stroke-dashoffset: 185;
+    animation-delay: 4.5s;
+}
+
+@keyframes growLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.dot1 {
+    fill: #8BE8CB;
+    opacity: 0;
+    filter: blur(8px);
+    animation: appear 0.5s ease forwards;
+}
+
+.dot2 {
+    fill: #F29CB7;
+    opacity: 0;
+    filter: blur(8px);
+    animation: appear 0.5s ease forwards;
+    animation-delay: 1.5s;
+}
+
+.dot3 {
+    fill: #FBD050;
+    opacity: 0;
+    filter: blur(8px);
+    animation: appear 0.5s ease forwards;
+    animation-delay: 2.25s;
+}
+
+.dot4 {
+    fill: #7DA0C0;
+    opacity: 0;
+    filter: blur(8px);
+    animation: appear 0.5s ease forwards;
+    animation-delay: 3.75s;
+}
+
+.dot5 {
+    fill: #D9D9D9;
+    opacity: 0;
+    filter: blur(8px);
+    animation: appear 0.5s ease forwards;
+    animation-delay: 4.5s;
+}
+
+.dot6 {
+    fill: #FFD166;
+    opacity: 0;
+    filter: blur(8px);
+    animation: appear 0.5s ease forwards;
+    animation-delay: 5.25s;
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+    }
+}
