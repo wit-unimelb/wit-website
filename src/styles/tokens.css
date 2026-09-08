@@ -6,6 +6,8 @@
     --ds-plum-700: #5e3e67;
     --ds-lilac-200: #d8ddff;
     --ds-lilac-100: #eef1ff;
+    --ds-lavender-400: #EB9BFF;
+    --ds-lavender-200: #F7D7FF;
     --ds-pink-300: #ffc7d9;
     --ds-pink-200: #ffe0ec;
     --ds-cream: #fff8ee;
@@ -37,6 +39,7 @@
     --ds-font-weight-regular: 400;
     --ds-font-weight-label: 350;
     --ds-font-weight-medium: 500;
+    --ds-font-weight-semibold: 600;
     --ds-font-weight-heading: 550;
 
     --ds-space-1: 0.5rem;
