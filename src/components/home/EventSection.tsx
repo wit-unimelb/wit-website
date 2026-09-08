@@ -1,5 +1,6 @@
 import "./EventSection.css";
 import humanitixData from '../../../data/humanitix.json';
+import { useState } from "react";
 
 /* map humantix event types to internal event categories */
 const HUMANITIX_CATEGORY_MAP: Record<string, 'Workshops' | 'Networking' | 'Social Events' | 'Competitions' | 'Other'> = {
@@ -72,8 +73,21 @@ export default function EventSection() {
   if (upcomingEvents.length === 0) {
     return (null);
   }
-  let currEvent = upcomingEvents[0];
+  const [currEventIndex, setCurrEventIndex] = useState(0);
+  const currEvent = upcomingEvents[currEventIndex];
   const canNav = upcomingEvents.length > 1;
+
+  function goBack() {
+    setCurrEventIndex((index) =>
+      (index - 1 + upcomingEvents.length) % upcomingEvents.length
+    );
+  }
+
+  function goForward() {
+    setCurrEventIndex((index) =>
+      (index + 1) % upcomingEvents.length
+    );
+  }
 
   return (
     <section className="event-section" aria-labelledby="event-heading">
@@ -93,11 +107,12 @@ export default function EventSection() {
               type="button"
               className="event-card__nav event-card__nav--prev"
               aria-label="Previous event"
+              onClick={goBack}
             >
-              ‹
+              <img src="../../../public/back-arrow.png" alt="Previous event" />
             </button>}
 
-            <div className="event-card__media">
+            <div className="event-card__media" key={`media-${currEventIndex}`}>
               <img src={currEvent.image} alt={currEvent.name} />
             </div>
 
@@ -105,13 +120,14 @@ export default function EventSection() {
               type="button"
               className="event-card__nav event-card__nav--next"
               aria-label="Next event"
+              onClick={goForward}
             >
-              ›
+              <img src="../../../public/next-arrow.png" alt="Next event" />
             </button>}
 
             <div className="event-card__spacer" aria-hidden="true" />
 
-            <div className="event-card__content">
+            <div className="event-card__content" key={`content-${currEventIndex}`}>
               <h3 className="event-card__title">
                 {currEvent.name}
               </h3>
@@ -122,7 +138,9 @@ export default function EventSection() {
               <p className="event-card__text">
                 {currEvent.caption}
               </p>
-              <button type="button" className="event-card__button ds-button">
+              <button type="button" 
+                  className="event-card__button ds-button" 
+                  onClick={() => window.open(currEvent.humanitixUrl, '_blank')}>
                 Find out more
               </button>
             </div>

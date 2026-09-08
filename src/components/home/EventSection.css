@@ -15,6 +15,7 @@
 
 .event-section__heading {
   display: inline-block;
+  line-height: 1.15;
   margin-top: clamp(1.15rem, 2vw, 1.8rem);
   position: relative;
   z-index: 0;
@@ -50,7 +51,7 @@
     "prev media next"
     "spacer content spacer-2";
   align-items: center;
-  width: min(100%, 56rem);
+  width: min(100%, 80rem);
   gap: clamp(1rem, 3vw, 2.8rem);
   padding: clamp(0.75rem, 2vw, 1.25rem);
 }
@@ -81,19 +82,20 @@
 }
 
 .event-card__nav--prev:hover {
-  transform: translateX(-1px);
+  transform: translateX(-2px);
 }
 
 .event-card__nav--next:hover {
-  transform: translateX(1px);
+  transform: translateX(2px);
 }
 
 .event-card__media {
   grid-area: media;
   overflow: hidden;
   border-radius: var(--ds-radius-sm);
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 2 / 1;
   filter: drop-shadow(var(--ds-shadow));
+  animation: event-content-enter 0.35s ease both;
 }
 
 .event-card__media img {
@@ -114,6 +116,26 @@
   max-width: calc(100% - 2 * clamp(0.75rem, 2vw, 1.25rem));
   margin-top: 1rem;
   text-align: left;
+  animation: event-content-enter 0.35s ease 0.05s both;
+}
+
+@keyframes event-content-enter {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .event-card__media,
+  .event-card__content {
+    animation: none;
+  }
 }
 
 .event-card__title {
@@ -124,20 +146,21 @@
 }
 
 .event-card__details {
-  margin: 0.5rem 0 0;
+  margin: 1rem 0 0;
   color: white;
   font-size: clamp(1rem, 1.5vw, 1.5rem);
 }
 
 .event-card__text {
-  margin: 0.5rem 0 0;
+  margin: 1rem 0 0;
   color: white;
   font-size: clamp(0.8rem, 1.25vw, 1.25rem);
+  font-style: italic;
 }
 
 .event-card__button {
-  margin: 1rem 0 0;
-  padding: 0.5rem 1rem;
+  margin: 1.5rem 0 0;
+  padding: 0.75rem 1rem;
   font-size: clamp(0.8rem, 1.25vw, 1.25rem);
   border-radius: var(--ds-radius-sm);
   background-color: var(--ds-lavender-200);
