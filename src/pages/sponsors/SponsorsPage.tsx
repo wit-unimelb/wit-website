@@ -71,7 +71,7 @@ export default function Sponsors() {
 
                 <div className="sponsors-header">
                     <p className="section-kicker">Our Partners</p>
-                    <h2 className="section-heading"><em> 2026 Sponsors</em></h2>
+                    <h2 className="section-heading"> 2026 Sponsors</h2>
                     <p className="sponsors-lead">
                         WiT is proudly supported by industry leaders who share our commitment
                         to empowering women in technology.
@@ -120,7 +120,7 @@ export default function Sponsors() {
                 ))}
 
                 <div className="sponsors-cta glass-box">
-                    <h3><em>INTERESTED IN SPONSORING WIT?</em></h3>
+                    <h3>INTERESTED IN SPONSORING WIT?</h3>
                     <p>
                         Partner with us to connect with Melbourne's brightest women in tech.<br />
                         Download our Prospectus or get in touch directly.
@@ -131,7 +131,7 @@ export default function Sponsors() {
                 </div>
 
                 <div className="contact-section glass-box">
-                    <h3><em>CONTACT US</em></h3>
+                    <h3>CONTACT US</h3>
                     <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
                         <div className="form-grid">
                             <input type="text" placeholder="First Name *" required />
