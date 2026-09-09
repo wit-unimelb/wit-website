@@ -125,7 +125,7 @@ export default function ContactPage() {
                             </li>
                             {/* TODO: Populate a fresh invite from the scheduled Discord-link worker. */}
                             <li>
-                                <button aria-controls="discord-status" aria-expanded={isDiscordNoticeVisible} className="contact-page__social-link" onClick={() => setDiscordNoticeVisible((visible) => !visible)} type="button">
+                                <button aria-controls="discord-status" aria-expanded={isDiscordNoticeVisible} className="contact-page__social-link" onClick={() => setIsDiscordNoticeVisible((visible) => !visible)} type="button">
                                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/discord.svg" alt="" />
                                     <span>Discord</span>
                                 </button>

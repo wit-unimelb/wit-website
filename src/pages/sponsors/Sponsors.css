@@ -270,59 +270,6 @@
     letter-spacing: 0.02em;
 }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    text-align: left;
-}
-
-.form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
-
-.form-grid textarea {
-    grid-column: 1 / -1;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 14px 16px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    font-size: 14px;
-    font-family: inherit;
-    resize: none;
-    box-sizing: border-box;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: #7dc4ff;
-    box-shadow: 0 0 0 3px rgba(125, 196, 255, 0.35);
-    background: rgba(255, 255, 255, 0.14);
-}
-
-.contact-form textarea {
-    padding-top: 14px;
-}
-
-.contact-form button {
-    align-self: center;
-    margin-top: 8px;
-}
 
 /* ---------- Responsive ---------- */
 

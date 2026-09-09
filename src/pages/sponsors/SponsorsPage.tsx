@@ -1,3 +1,4 @@
+import { useState, type FormEvent } from 'react'
 import './Sponsors.css'
 
 type Sponsor = {
@@ -59,12 +60,54 @@ const sponsorLogosByKey = Object.fromEntries(
     })
 ) as Record<string, string>
 
+// ADD THESE TWO LINES:
+console.log('sponsorLogoFiles:', sponsorLogoFiles)
+console.log('sponsorLogosByKey:', Object.keys(sponsorLogosByKey))
+
 function getSponsorLogo(sponsor: Sponsor) {
     const logoKey = normalizeSponsorKey(sponsor.logo ?? sponsor.name)
     return sponsorLogosByKey[logoKey]
 }
 
+const contactEndpoint = import.meta.env.VITE_CONTACT_API_URL ?? 'https://wit-contact-api.women-in-ict-unimelb.workers.dev/api/contact'
+
+type SubmissionState = 'idle' | 'submitting' | 'success' | 'error'
+
 export default function Sponsors() {
+    const [submissionState, setSubmissionState] = useState<SubmissionState>('idle')
+
+    async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+        event.preventDefault()
+        const form = event.currentTarget
+        const formData = new FormData(form)
+
+        setSubmissionState('submitting')
+
+        try {
+            const response = await fetch(contactEndpoint, {
+                body: JSON.stringify({
+                    email: formData.get('email'),
+                    firstName: formData.get('firstName'),
+                    lastName: formData.get('lastName'),
+                    message: formData.get('message'),
+                    phone: formData.get('phone'),
+                    website: formData.get('website'),
+                }),
+                headers: { 'Content-Type': 'application/json' },
+                method: 'POST',
+            })
+
+            if (!response.ok) {
+                throw new Error('Unable to submit the contact form.')
+            }
+
+            form.reset()
+            setSubmissionState('success')
+        } catch {
+            setSubmissionState('error')
+        }
+    }
+
     return (
         <section className="sponsors-page">
             <div className="sponsors-page-inner">
@@ -130,17 +173,46 @@ export default function Sponsors() {
                     </div>
                 </div>
 
-                <div className="contact-section glass-box">
+                <div className="contact-section">
                     <h3>CONTACT US</h3>
-                    <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-                        <div className="form-grid">
-                            <input type="text" placeholder="First Name *" required />
-                            <input type="text" placeholder="Last Name" />
-                            <input type="text" placeholder="Phone No. *" required />
-                            <input type="email" placeholder="Email *" required />
-                            <textarea placeholder="Message" rows={4}></textarea>
+                    <form className="contact-page__form contact-page ui-glass-panel ui-glass-panel--strong" onSubmit={handleSubmit}>
+                        <input aria-hidden="true" autoComplete="off" className="contact-page__honeypot" name="website" tabIndex={-1} type="text" />
+
+                        <div className="contact-page__fields">
+                            <div className="ui-form-field">
+                                <label htmlFor="sponsors-first-name">First name <span aria-hidden="true" className="contact-page__required">*</span></label>
+                                <input autoComplete="given-name" id="sponsors-first-name" name="firstName" placeholder="First name" required />
+                            </div>
+
+                            <div className="ui-form-field">
+                                <label htmlFor="sponsors-last-name">Last name</label>
+                                <input autoComplete="family-name" id="sponsors-last-name" name="lastName" placeholder="Last name" />
+                            </div>
+
+                            <div className="ui-form-field">
+                                <label htmlFor="sponsors-email">Email <span aria-hidden="true" className="contact-page__required">*</span></label>
+                                <input autoComplete="email" id="sponsors-email" name="email" placeholder="Email" required type="email" />
+                            </div>
+
+                            <div className="ui-form-field">
+                                <label htmlFor="sponsors-phone">Phone number <span aria-hidden="true" className="contact-page__required">*</span></label>
+                                <input autoComplete="tel" id="sponsors-phone" name="phone" placeholder="Phone number" required type="tel" />
+                            </div>
+
+                            <div className="ui-form-field">
+                                <label htmlFor="sponsors-message">Message</label>
+                                <textarea id="sponsors-message" name="message" placeholder="Message" />
+                            </div>
                         </div>
-                        <button type="submit" className="btn-gradient">Submit</button>
+
+                        <button className={`contact-page__submit${submissionState === 'success' ? ' is-submitted' : ''}`} disabled={submissionState === 'submitting' || submissionState === 'success'} type="submit">
+                            <span aria-live="polite" key={submissionState}>
+                                {submissionState === 'success' ? 'Thank you, we will be in touch :)' : null}
+                                {submissionState === 'submitting' ? 'Sending message…' : null}
+                                {submissionState === 'error' ? 'Unable to send — please try again' : null}
+                                {submissionState === 'idle' ? 'Submit' : null}
+                            </span>
+                        </button>
                     </form>
                 </div>
 
