@@ -44,3 +44,41 @@
         justify-content: center;
     }
 }
+
+.site-footer {
+    position: relative; /* positioning context so the pony container can anchor to this box */
+}
+
+.running-pony-container {
+    position: absolute;
+    bottom: 100%; /* sits exactly at the footer's top border, regardless of page content above */
+    left: 0;
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    pointer-events: none; /* container itself shouldn't block clicks on the page behind it */
+}
+
+.running-pony {
+    position: absolute;
+    bottom: 0;
+    height: 80px;
+    pointer-events: auto; /* re-enable clicks just on the pony itself */
+    cursor: pointer;
+    animation: runAcross 10s linear infinite;
+}
+
+.running-pony.jump {
+    animation: runAcross 10s linear infinite, horseJump 0.6s ease-out;
+}
+
+@keyframes runAcross {
+    0% { transform: translateX(-150px) scaleX(-1); }
+    100% { transform: translateX(100vw) scaleX(-1); }
+}
+
+@keyframes horseJump {
+    0% { bottom: 0px; }
+    50% { bottom: 90px; }
+    100% { bottom: 0px; }
+}
