@@ -432,23 +432,23 @@ export default function EventsExplorer() {
 
                                 return (
                                     <article
-                                        className={`event-card${isUpcoming ? ' event-card--upcoming' : ' event-card--past'}${isHighlighted ? ' is-highlighted' : ''}`}
+                                        className={`events-event-card${isUpcoming ? ' events-event-card--upcoming' : ' events-event-card--past'}${isHighlighted ? ' is-highlighted' : ''}`}
                                         id={`event-${event.id}`}
                                         key={event.id}
                                         ref={(node) => { eventCardRefs.current[event.id] = node }}
                                     >
-                                        <div className="event-card__media">
-                                            {event.image ? <img alt="" loading="lazy" src={event.image} /> : <div aria-hidden="true" className="event-card__placeholder">WIT</div>}
+                                        <div className="events-event-card__media">
+                                            {event.image ? <img alt="" loading="lazy" src={event.image} /> : <div aria-hidden="true" className="events-event-card__placeholder">WIT</div>}
                                         </div>
-                                        <div className="event-card__body">
+                                        <div className="events-event-card__body">
                                             <h3>{event.title}</h3>
-                                            <div className="event-card__meta">
+                                            <div className="events-event-card__meta">
                                                 <p>{event.category}</p>
                                                 <span>{isUpcoming ? 'Upcoming' : 'Past'}</span>
                                             </div>
-                                            <p className="event-card__date">{formatEventDateTime(event)}</p>
-                                            {event.location ? <p className="event-card__location">{event.location}</p> : null}
-                                            {event.caption ? <p className="event-card__caption">{event.caption}</p> : null}
+                                            <p className="events-event-card__date">{formatEventDateTime(event)}</p>
+                                            {event.location ? <p className="events-event-card__location">{event.location}</p> : null}
+                                            {event.caption ? <p className="events-event-card__caption">{event.caption}</p> : null}
                                             {isUpcoming && event.humanitixUrl ? (
                                                 <Button href={event.humanitixUrl} rel="noreferrer" target="_blank" tone="gradient">Get Tickets</Button>
                                             ) : null}
