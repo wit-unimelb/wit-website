@@ -46,7 +46,8 @@
 }
 
 .site-footer {
-    position: relative; /* positioning context so the pony container can anchor to this box */
+    position: relative;
+    z-index: 2;
 }
 
 .running-pony-container {
@@ -57,6 +58,7 @@
     height: 190px;
     overflow: hidden;
     pointer-events: none; /* container itself shouldn't block clicks on the page behind it */
+    z-index: 1;
 }
 
 .running-pony {

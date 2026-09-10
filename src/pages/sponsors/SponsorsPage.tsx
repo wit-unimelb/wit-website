@@ -1,4 +1,6 @@
 import { useState, type FormEvent } from 'react'
+import Button from '@/components/ui/Button'
+import PageHero from '@/components/ui/PageHero'
 import './Sponsors.css'
 
 type Sponsor = {
@@ -60,10 +62,6 @@ const sponsorLogosByKey = Object.fromEntries(
     })
 ) as Record<string, string>
 
-// ADD THESE TWO LINES:
-console.log('sponsorLogoFiles:', sponsorLogoFiles)
-console.log('sponsorLogosByKey:', Object.keys(sponsorLogosByKey))
-
 function getSponsorLogo(sponsor: Sponsor) {
     const logoKey = normalizeSponsorKey(sponsor.logo ?? sponsor.name)
     return sponsorLogosByKey[logoKey]
@@ -109,17 +107,16 @@ export default function Sponsors() {
     }
 
     return (
-        <section className="sponsors-page">
-            <div className="sponsors-page-inner">
+        <article className="new-site-page sponsors-page">
+            <PageHero
+                className="sponsors-page__hero"
+                compact
+                eyebrow="Our partners"
+                lead="WiT is proudly supported by industry leaders who share our commitment to empowering women in technology."
+                title="2026 sponsors"
+            />
 
-                <div className="sponsors-header">
-                    <p className="section-kicker">Our Partners</p>
-                    <h2 className="section-heading"> 2026 Sponsors</h2>
-                    <p className="sponsors-lead">
-                        WiT is proudly supported by industry leaders who share our commitment
-                        to empowering women in technology.
-                    </p>
-                </div>
+            <div className="sponsors-page-inner ds-container">
 
                 {(Object.keys(SPONSORS) as SponsorTier[]).map((tier) => (
                     <div className="sponsor-tier" key={tier}>
@@ -162,25 +159,24 @@ export default function Sponsors() {
                     </div>
                 ))}
 
-                <div className="sponsors-cta glass-box">
-                    <h3>INTERESTED IN SPONSORING WIT?</h3>
-                    <p>
-                        Partner with us to connect with Melbourne's brightest women in tech.<br />
-                        Download our Prospectus or get in touch directly.
+                <section className="sponsors-cta ui-glass-panel ui-glass-panel--strong">
+                    <h2 className="ui-section-heading">Interested in sponsoring WiT?</h2>
+                    <p className="ui-section-copy">
+                        Partner with us to connect with Melbourne's brightest women in tech. Download our prospectus or get in touch directly.
                     </p>
                     <div className="sponsors-cta-actions">
-                        <a href="#" className="btn-gradient">Download Prospectus</a>
+                        <Button href="#" tone="gradient">Download Prospectus</Button>
                     </div>
-                </div>
+                </section>
 
-                <div className="contact-section">
-                    <h3>CONTACT US</h3>
-                    <form className="contact-page__form contact-page ui-glass-panel ui-glass-panel--strong" onSubmit={handleSubmit}>
-                        <input aria-hidden="true" autoComplete="off" className="contact-page__honeypot" name="website" tabIndex={-1} type="text" />
+                <section className="sponsors-contact">
+                    <h2 className="ui-section-heading">Contact us</h2>
+                    <form className="sponsors-contact__form ui-glass-panel ui-glass-panel--strong" onSubmit={handleSubmit}>
+                        <input aria-hidden="true" autoComplete="off" className="sponsors-contact__honeypot" name="website" tabIndex={-1} type="text" />
 
-                        <div className="contact-page__fields">
+                        <div className="sponsors-contact__fields">
                             <div className="ui-form-field">
-                                <label htmlFor="sponsors-first-name">First name <span aria-hidden="true" className="contact-page__required">*</span></label>
+                                <label htmlFor="sponsors-first-name">First name <span aria-hidden="true" className="sponsors-contact__required">*</span></label>
                                 <input autoComplete="given-name" id="sponsors-first-name" name="firstName" placeholder="First name" required />
                             </div>
 
@@ -190,12 +186,12 @@ export default function Sponsors() {
                             </div>
 
                             <div className="ui-form-field">
-                                <label htmlFor="sponsors-email">Email <span aria-hidden="true" className="contact-page__required">*</span></label>
+                                <label htmlFor="sponsors-email">Email <span aria-hidden="true" className="sponsors-contact__required">*</span></label>
                                 <input autoComplete="email" id="sponsors-email" name="email" placeholder="Email" required type="email" />
                             </div>
 
                             <div className="ui-form-field">
-                                <label htmlFor="sponsors-phone">Phone number <span aria-hidden="true" className="contact-page__required">*</span></label>
+                                <label htmlFor="sponsors-phone">Phone number <span aria-hidden="true" className="sponsors-contact__required">*</span></label>
                                 <input autoComplete="tel" id="sponsors-phone" name="phone" placeholder="Phone number" required type="tel" />
                             </div>
 
@@ -205,7 +201,7 @@ export default function Sponsors() {
                             </div>
                         </div>
 
-                        <button className={`contact-page__submit${submissionState === 'success' ? ' is-submitted' : ''}`} disabled={submissionState === 'submitting' || submissionState === 'success'} type="submit">
+                        <button className={`sponsors-contact__submit${submissionState === 'success' ? ' is-submitted' : ''}`} disabled={submissionState === 'submitting' || submissionState === 'success'} type="submit">
                             <span aria-live="polite" key={submissionState}>
                                 {submissionState === 'success' ? 'Thank you, we will be in touch :)' : null}
                                 {submissionState === 'submitting' ? 'Sending message…' : null}
@@ -214,9 +210,9 @@ export default function Sponsors() {
                             </span>
                         </button>
                     </form>
-                </div>
+                </section>
 
             </div>
-        </section>
+        </article>
     )
 }
