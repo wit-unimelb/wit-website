@@ -82,6 +82,8 @@
     aspect-ratio: 1 / 1;
     background: var(--ds-cream);
     border-radius: var(--ds-radius-md);
+    cursor: pointer;
+    display: block;
     overflow: hidden;
     position: relative;
     width: 100%;
