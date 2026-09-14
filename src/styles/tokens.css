@@ -6,6 +6,8 @@
     --ds-plum-700: #5e3e67;
     --ds-lilac-200: #d8ddff;
     --ds-lilac-100: #eef1ff;
+    --ds-lavender-400: #EB9BFF;
+    --ds-lavender-200: #F7D7FF;
     --ds-pink-300: #ffc7d9;
     --ds-pink-200: #ffe0ec;
     --ds-cream: #fff8ee;
@@ -20,6 +22,8 @@
     --ds-aurora-night: #493467;
     --ds-aurora-rose-glow: rgba(255, 184, 212, 0.44);
     --ds-aurora-blue-glow: rgba(116, 138, 243, 0.5);
+    --ds-background-noise-opacity: 0.25;
+    --ds-background-noise-size: 6rem;
 
     /* Reusable surfaces and actions */
     --ds-surface-glass: rgba(255, 238, 253, 0.12);
@@ -35,6 +39,7 @@
     --ds-font-weight-regular: 400;
     --ds-font-weight-label: 350;
     --ds-font-weight-medium: 500;
+    --ds-font-weight-semibold: 600;
     --ds-font-weight-heading: 550;
 
     --ds-space-1: 0.5rem;

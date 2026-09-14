@@ -1,4 +1,6 @@
 import './SiteFooter.css'
+import twilightGif from '../../assets/twilightSparkle.gif'
+import { useState } from 'react'
 
 const links = [
     { label: 'Instagram', href: 'https://www.instagram.com/witunimelb/', icon: 'instagram' },
@@ -8,8 +10,25 @@ const links = [
 ]
 
 export default function SiteFooter() {
+    const [isJumping, setIsJumping] = useState(false)
+
+    const handleJump = () => {
+        if (!isJumping) {
+            setIsJumping(true)
+            setTimeout(() => setIsJumping(false), 600)
+        }
+    }
+
     return (
         <footer className="site-footer">
+            <div className="running-pony-container">
+                <img
+                    src={twilightGif}
+                    alt="Twilight Sparkle running"
+                    className={`running-pony ${isJumping ? 'jump' : ''}`}
+                    onClick={handleJump}
+                />
+            </div>
             <div className="site-footer__inner ds-container">
                 <p className="site-footer__brand">Women In Tech</p>
                 <p>© 2026 Women in Technology, University of Melbourne</p>
