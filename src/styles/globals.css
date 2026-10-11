@@ -66,7 +66,7 @@ html body {
 }
 
 .page-canvas {
-    min-height: 100svh;
+    min-height: 0;
 }
 
 .ds-container {
