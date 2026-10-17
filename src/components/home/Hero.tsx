@@ -64,7 +64,7 @@ export default function Hero() {
                     <i>The University of Melbourne</i>
                 </p>
                 <svg key={animationKey} viewBox="0 0 800 150" 
-                    width="100%" height="auto" style={{overflow: "visible"}}>
+                    width="100%" height="auto" style={{overflow: "visible", maxHeight: "220px"}}>
                     <line 
                         x1="25" 
                         y1="100" 

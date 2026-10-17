@@ -35,9 +35,8 @@
 
 .hero-eyebrow {
     display: inline-flex;
-    align-items: center;
     gap: 8px;
-    font-size: 1.25rem;
+    font-size: clamp(0.7rem, 1vw, 2rem);
     font-weight: var(--ds-font-weight-label);
     text-transform: uppercase;
     /*TODO: might need to change */
@@ -46,13 +45,11 @@
     padding: 6px 16px;
     border-radius: 20px;
     margin-bottom: 50px;
-    backdrop-filter: blur(8px);
-    transform: translateY(16px);
 }
 
 .hero-title {
     font-family: var(--ds-font-sans);
-    font-size: clamp(3rem, 10vw, 6rem);
+    font-size: clamp(2.25rem, 10vw, 5rem);
     font-weight: var(--ds-font-weight-heading);
     width: fit-content;
     white-space: nowrap;
@@ -74,9 +71,12 @@
     font-weight: var(--ds-font-weight-label);
     margin: 0 auto 0px;
     transform: translateY(16px);
+    margin: 0 auto;
+    margin-bottom: clamp(1.5rem, 1rem + 2vw, 3rem);
 }
 
 .hero-sentence {
+    display: block;
     text-align: right;
     font-family: var(--ds-font-sans);
     font-size: clamp(0.95rem, 2.5vw, 1.75rem);
@@ -85,9 +85,8 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: var(--ds-font-weight-regular);
-    margin-top: 100px; 
-    margin-bottom: 50px; 
-    transform: translateY(16px);
+    margin-top: clamp(1.5rem, 1rem + 10vw, 8rem);
+    margin-bottom: clamp(1.5rem, 1rem + 10vw, 8rem);
 }
 
 /*Stats - Use Prospectus*/
@@ -99,7 +98,6 @@
     align-items: stretch;
     width: 100%;
     padding: 80px 24px 80px;
-    padding-left: 55px;
     background: #E6F3FF;
 }
 
