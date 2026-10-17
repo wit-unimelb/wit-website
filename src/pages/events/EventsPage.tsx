@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import twilightGif from '../../assets/twilightSparkle.gif'
 import './Events.css'
+import EventSection from '../../components/home/EventSection';
 
 export default function EventsPage() {
     const [isJumping, setIsJumping] = useState(false)
@@ -23,6 +24,8 @@ export default function EventsPage() {
                     </p>
                 </div>
             </div>
+
+            <EventSection />
 
             {/* Placed at the bottom of the page section, right above the footer */}
             <div className="running-pony-container">

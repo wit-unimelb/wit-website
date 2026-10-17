@@ -1,5 +1,5 @@
 .event-section {
-  padding: clamp(4.5rem, 9vw, 8rem) 0 clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(4.5rem, 4vw, 4rem) 0 6rem;
 }
 
 .event-section__inner {
@@ -16,7 +16,7 @@
 .event-section__heading {
   display: inline-block;
   line-height: 1.15;
-  margin-top: clamp(1.15rem, 2vw, 1.8rem);
+  margin-top: 0;
   position: relative;
   z-index: 0;
 }
