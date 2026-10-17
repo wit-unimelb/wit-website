@@ -1,29 +1,29 @@
 import { Routes, Route } from 'react-router-dom'
-import Navbar from '@/components/Navbar'
-import Hero from '@/components/Hero'
-import Pillars from '@/components/Pillars'
-import Marquee from '@/components/Marquee'
-import JoinCTA from '@/components/JoinCTA'
-import Footer from '@/components/Footer'
-import Sponsors from '@/components/Sponsors'
-import Home from '@/pages/Home'
-import SponsorsPage from '@/pages/SponsorsPage'
-import EventsPage from '@/pages/EventsPage'
-import AboutPage from '@/pages/AboutPage'
+import SiteFooter from '@/components/layout/SiteFooter'
+import SiteHeader from '@/components/layout/SiteHeader'
+import AboutPage from '@/pages/about/AboutPage'
+import ContactPage from '@/pages/contact/ContactPage'
+import EventsPage from '@/pages/events/EventsPage'
+import HomePage from '@/pages/HomePage'
+import MerchandisePage from '@/pages/merchandise/MerchandisePage'
+import SponsorsPage from '@/pages/sponsors/SponsorsPage'
 
 export default function App() {
     return (
-        <>
-            <Navbar />
-            <main>
+        <div className="site-shell">
+            <SiteHeader />
+            <main className="site-main">
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<HomePage />} />
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/sponsors" element={<SponsorsPage />} />
                     <Route path="/events" element={<EventsPage />} />
+                    <Route path="/merchandise" element={<MerchandisePage />} />
+                    <Route path="/contact" element={<ContactPage />} />
+                    <Route path="*" element={<HomePage />} />
                 </Routes>
             </main>
-            <Footer />
-        </>
+            <SiteFooter />
+        </div>
     )
 }
