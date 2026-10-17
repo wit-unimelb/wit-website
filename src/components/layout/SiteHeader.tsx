@@ -7,7 +7,7 @@ const navigation = [
     { label: 'Events', to: '/events' },
     { label: 'Sponsors', to: '/sponsors' },
     { label: 'Merchandise', to: '/merchandise' },
-    { label: 'About Us', to: '/about' },
+    /*{ label: 'About Us', to: '/about' },*/
     { label: 'Contact', to: '/contact' },
 ]
 
