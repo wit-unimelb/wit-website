@@ -21,14 +21,14 @@ export default function SiteFooter() {
 
     return (
         <footer className="site-footer">
-            <div className="running-pony-container">
+            {/* <div className="running-pony-container">
                 <img
                     src={twilightGif}
                     alt="Twilight Sparkle running"
                     className={`running-pony ${isJumping ? 'jump' : ''}`}
                     onClick={handleJump}
                 />
-            </div>
+            </div> */}
             <div className="site-footer__inner ds-container">
                 <p className="site-footer__brand">Women In Tech</p>
                 <p>© 2026 Women in Technology, University of Melbourne</p>
